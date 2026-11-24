@@ -53,6 +53,24 @@
       "sizes": "S, M, L, XL",
       "description": "Embroidered border, made for Diwali and weddings.",
       "image": "https://placehold.co/600x750/6A1B1A/D4A017?text=Festive+Set"
+    },
+    {
+      "id": "p1795543078910",
+      "image": "",
+      "name": "सणासुदीचा सेट | Festive Kurta Pyjama Set",
+      "price": 3500,
+      "category": "Kurtas",
+      "sizes": "S, M, L, XL",
+      "description": "khadi"
+    },
+    {
+      "id": "p1795543211404",
+      "image": "images/1795543211434-v.jpg",
+      "name": "सणासुदीचा सेट | Festive Kurta Pyjama Set",
+      "price": 3500,
+      "category": "Kurtas",
+      "sizes": "S, M, L, XL",
+      "description": "khadi"
     }
   ],
   "reviews": [
