@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="mr">
 <head>
@@ -7,301 +6,21 @@
 <meta name="robots" content="noindex">
 <title>Admin | सोहळा खादी शॉप</title>
 <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --wine:#6A1B1A;
-  --wine-dark:#42110F;
-  --gold:#D4A017;
-  --cream:#FAF8F5;
-  --paper:#fff;
-  --ink:#2C1E16;
-  --muted:#85766A;
-  --border:#E9DED2;
-}
-
-*{box-sizing:border-box}
-
-body{
-  font-family:'Poppins',sans-serif;
-  background:
-    radial-gradient(circle at top right,#f2e5d4 0,transparent 30%),
-    var(--cream);
-  color:var(--ink);
-  min-height:100vh;
-}
-
-h1,h2{
-  font-family:'Rozha One',serif;
-  color:var(--wine);
-  letter-spacing:.2px;
-}
-
-/* INPUTS */
-
-input,select,textarea{
-  border:1px solid var(--border)!important;
-  padding:13px 14px!important;
-  border-radius:12px!important;
-  width:100%;
-  background:#fff;
-  color:var(--ink);
-  transition:.25s ease;
-  outline:none;
-}
-
-input:focus,select:focus,textarea:focus{
-  border-color:var(--gold)!important;
-  box-shadow:0 0 0 3px rgba(212,160,23,.12);
-}
-
-input[type=file]{
-  background:#FAF8F5;
-  border-style:dashed!important;
-}
-
-/* BUTTONS */
-
-.btn{
-  background:var(--wine);
-  color:var(--cream);
-  padding:11px 18px;
-  border-radius:12px;
-  font-weight:500;
-  transition:all .25s ease;
-  cursor:pointer;
-  border:1px solid transparent;
-}
-
-.btn:hover{
-  background:var(--gold);
-  color:var(--wine-dark);
-  transform:translateY(-1px);
-  box-shadow:0 6px 16px rgba(212,160,23,.2);
-}
-
-/* LOGIN */
-
-#login{
-  margin-top:7vh;
-  padding:36px;
-  border:1px solid var(--border);
-  border-radius:24px;
-  box-shadow:0 25px 70px rgba(66,17,15,.12);
-  background:rgba(255,255,255,.96);
-  position:relative;
-  overflow:hidden;
-}
-
-#login:before{
-  content:"SOHALA  •  KHADI";
-  display:block;
-  text-align:center;
-  font-size:11px;
-  letter-spacing:5px;
-  font-weight:600;
-  color:var(--gold);
-  padding:15px 0 24px;
-}
-
-#login h1{
-  text-align:center;
-  line-height:1.5;
-  font-size:27px;
-  margin-bottom:20px;
-}
-
-/* DASHBOARD */
-
-#dash{
-  max-width:1100px!important;
-  margin:0 auto;
-  padding:32px 20px!important;
-}
-
-#dash>div:first-child{
-  background:linear-gradient(135deg,var(--wine-dark),var(--wine));
-  padding:25px;
-  border-radius:20px;
-  color:white;
-  box-shadow:0 12px 30px rgba(66,17,15,.16);
-}
-
-#dash>div:first-child h1{
-  color:#fff!important;
-  font-size:26px;
-}
-
-#dash>div:first-child .btn{
-  background:#fff;
-  color:var(--wine);
-}
-
-#dash>div:first-child .btn:hover{
-  background:var(--gold);
-}
-
-/* TABS */
-
-#dash>div:nth-child(2){
-  gap:10px!important;
-  border-bottom:1px solid var(--border)!important;
-  margin:25px 0!important;
-  overflow-x:auto;
-}
-
-.tab{
-  padding:13px 22px!important;
-  border-radius:12px 12px 0 0;
-  color:var(--muted);
-  transition:.2s ease;
-  white-space:nowrap;
-}
-
-.tab:hover{
-  color:var(--wine);
-  background:#f2e9df;
-}
-
-.tab.on{
-  border-bottom:3px solid var(--gold)!important;
-  color:var(--wine);
-  font-weight:600;
-  background:rgba(212,160,23,.07);
-}
-
-/* EDITOR PANELS */
-
-#articles>div:first-child,
-#content>div:first-child,
-#reviews>div:first-child{
-  background:var(--paper);
-  border:1px solid var(--border);
-  border-radius:20px;
-  padding:25px!important;
-  box-shadow:0 8px 28px rgba(44,30,22,.06);
-}
-
-#articles h2,#reviews h2{
-  font-size:23px;
-  padding-bottom:8px;
-}
-
-label{
-  color:var(--muted);
-  font-weight:500;
-}
-
-/* PRODUCT LIST */
-
-#articles>div:nth-child(2)>div{
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:14px!important;
-  background:white;
-  box-shadow:0 4px 14px rgba(44,30,22,.04);
-  transition:.2s ease;
-}
-
-#articles>div:nth-child(2)>div:hover{
-  border-color:var(--gold);
-  transform:translateY(-2px);
-}
-
-#articles img{
-  border-radius:10px!important;
-  background:var(--cream);
-}
-
-/* REVIEWS */
-
-#reviews>div:nth-child(2)>div{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:18px!important;
-  box-shadow:0 4px 14px rgba(44,30,22,.04);
-}
-
-/* SPINNER */
-
-#spin{
-  backdrop-filter:blur(5px);
-}
-
-/* TOAST */
-
-#toast{
-  border-radius:14px!important;
-  padding:16px!important;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-
-/* MOBILE */
-
-@media(max-width:640px){
-
-  #login{
-    margin:30px 14px;
-    padding:24px;
-  }
-
-  #login h1{
-    font-size:23px;
-  }
-
-  #dash{
-    padding:16px!important;
-  }
-
-  #dash>div:first-child{
-    padding:17px;
-    gap:12px;
-  }
-
-  #dash>div:first-child h1{
-    font-size:19px;
-  }
-
-  .tab{
-    padding:11px 14px!important;
-    font-size:13px;
-  }
-
-  #articles>div:first-child,
-  #content>div:first-child,
-  #reviews>div:first-child{
-    padding:17px!important;
-  }
-
-  #articles>div:nth-child(2)>div{
-    flex-wrap:wrap;
-  }
-
-  #articles>div:nth-child(2)>div img{
-    width:52px;
-    height:65px;
-  }
-
-  #articles>div:nth-child(2)>div button{
-    font-size:12px;
-    padding:8px 12px;
-  }
-}
+  body{font-family:'Poppins',sans-serif;background:#FAF8F5;color:#2C1E16}
+  h1,h2{font-family:'Rozha One',serif;color:#6A1B1A}
+  input,select,textarea{border:1px solid #c9bfb4;padding:.5rem;border-radius:.25rem;width:100%;background:#fff}
+  .btn{background:#6A1B1A;color:#FAF8F5;padding:.5rem 1.1rem;border-radius:.25rem}
+  .btn:hover{background:#D4A017;color:#2C1E16}
+  .tab.on{border-bottom:3px solid #D4A017;font-weight:600}
 </style>
 </head>
-
 <body>
-
-<div id="spin" class="hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center">
-  <div class="w-12 h-12 border-4 border-white border-t-[#D4A017] rounded-full animate-spin"></div>
-</div>
-
+<div id="spin" class="hidden fixed inset-0 bg-black/40 z-50 flex items-center justify-center"><div class="w-12 h-12 border-4 border-white border-t-[#D4A017] rounded-full animate-spin"></div></div>
 <div id="toast" class="fixed top-4 right-4 z-50 px-4 py-3 rounded text-white hidden max-w-xs"></div>
 
 <!-- LOGIN -->
-
 <main id="login" class="max-w-md mx-auto mt-16 p-6 bg-white rounded shadow space-y-3">
   <h1 class="text-2xl">मालक लॉगिन | Owner Login</h1>
   <input id="u" placeholder="GitHub Username">
@@ -311,396 +30,155 @@ label{
 </main>
 
 <!-- DASHBOARD -->
-
 <main id="dash" class="hidden max-w-4xl mx-auto p-5">
-
-  <div class="flex justify-between items-center mb-4">
-    <h1 class="text-2xl">सोहळा खादी: Admin</h1>
-    <button id="logout" class="btn">Logout</button>
-  </div>
-
+  <div class="flex justify-between items-center mb-4"><h1 class="text-2xl">सोहळा खादी: Admin</h1><button id="logout" class="btn">Logout</button></div>
   <div class="flex gap-5 border-b mb-5">
     <button class="tab on py-2" data-t="articles">Articles</button>
     <button class="tab py-2" data-t="content">Section Editor</button>
     <button class="tab py-2" data-t="reviews">Reviews</button>
   </div>
-
-  <section id="articles"></section>
-  <section id="content" class="hidden"></section>
-  <section id="reviews" class="hidden"></section>
-
+  <section id="articles"></section><section id="content" class="hidden"></section><section id="reviews" class="hidden"></section>
 </main>
 
 <script>
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const b64e = s => btoa(unescape(encodeURIComponent(s)));
+const b64e = s => btoa(unescape(encodeURIComponent(s)));          // UTF-8 safe (Marathi text)
 const b64d = s => decodeURIComponent(escape(atob(s.replace(/\n/g,""))));
-
 let CFG = JSON.parse(localStorage.getItem("sk_cfg") || "null"), D = null, SHA = null, editId = null;
 
 const api = (path, opt = {}) => fetch(`https://api.github.com${path}`, {...opt, headers:{Authorization:`Bearer ${CFG.t}`,Accept:"application/vnd.github+json","Content-Type":"application/json"}});
-
 const spin = on => $("#spin").classList.toggle("hidden", !on);
+function toast(msg, ok = true){ const t = $("#toast"); t.textContent = msg; t.style.background = ok ? "#2e7d32" : "#b71c1c"; t.classList.remove("hidden"); setTimeout(() => t.classList.add("hidden"), 4500); }
 
-function toast(msg, ok = true){
-  const t = $("#toast");
-  t.textContent = msg;
-  t.style.background = ok ? "#2e7d32" : "#b71c1c";
-  t.classList.remove("hidden");
-  setTimeout(() => t.classList.add("hidden"), 4500);
-}
-
-/* AUTH */
-
+/* ---------- AUTH ---------- */
 $("#loginBtn").onclick = async () => {
   CFG = {u:$("#u").value.trim(), r:$("#r").value.trim(), t:$("#t").value.trim()};
   spin(true);
   try {
-    const me = await api("/user");
-    if (!me.ok) throw new Error("Token invalid");
-
-    const repo = await api(`/repos/${CFG.u}/${CFG.r}`);
-    const rj = await repo.json();
-
-    if (!repo.ok || !rj.permissions?.push)
-      throw new Error("No write access to this repository");
-
+    const me = await api("/user"); if (!me.ok) throw new Error("Token invalid");
+    const repo = await api(`/repos/${CFG.u}/${CFG.r}`); const rj = await repo.json();
+    if (!repo.ok || !rj.permissions?.push) throw new Error("No write access to this repository");
+    // Note: localStorage is readable by any script on this origin; use a fine-grained token limited to this one repo.
     localStorage.setItem("sk_cfg", JSON.stringify(CFG));
     await start();
-
-  } catch(e){
-    toast(e.message, false);
-    CFG = null;
-  }
+  } catch(e){ toast(e.message, false); CFG = null; }
   spin(false);
 };
-
-$("#logout").onclick = () => {
-  localStorage.removeItem("sk_cfg");
-  location.reload();
-};
+$("#logout").onclick = () => { localStorage.removeItem("sk_cfg"); location.reload(); };
 
 async function load(){
   const r = await api(`/repos/${CFG.u}/${CFG.r}/contents/data.json`);
   if (!r.ok) throw new Error("data.json not found in repository root");
-
-  const j = await r.json();
-  SHA = j.sha;
-  D = JSON.parse(b64d(j.content));
+  const j = await r.json(); SHA = j.sha; D = JSON.parse(b64d(j.content));
 }
-
 async function save(msg = "Update data.json via admin"){
   spin(true);
   try {
-    const r = await api(`/repos/${CFG.u}/${CFG.r}/contents/data.json`, {
-      method:"PUT",
-      body:JSON.stringify({
-        message:msg,
-        content:b64e(JSON.stringify(D,null,2)),
-        sha:SHA
-      })
-    });
-
+    const r = await api(`/repos/${CFG.u}/${CFG.r}/contents/data.json`, {method:"PUT", body:JSON.stringify({message:msg, content:b64e(JSON.stringify(D,null,2)), sha:SHA})});
     if (!r.ok) throw new Error((await r.json()).message);
-
     SHA = (await r.json()).content.sha;
     toast("Updated successfully! Changes will reflect in 30 seconds");
-
-  } catch(e){
-    toast("Save failed: " + e.message, false);
-  }
-
-  spin(false);
-  render();
+  } catch(e){ toast("Save failed: " + e.message, false); }
+  spin(false); render();
 }
-
 async function start(){
   spin(true);
-  try {
-    await load();
-    $("#login").classList.add("hidden");
-    $("#dash").classList.remove("hidden");
-    render();
-  } catch(e){
-    toast(e.message, false);
-  }
+  try { await load(); $("#login").classList.add("hidden"); $("#dash").classList.remove("hidden"); render(); }
+  catch(e){ toast(e.message, false); }
   spin(false);
 }
 
-/* TABS */
-
+/* ---------- TABS ---------- */
 document.querySelectorAll(".tab").forEach(b => b.onclick = () => {
   document.querySelectorAll(".tab").forEach(x => x.classList.toggle("on", x === b));
   ["articles","content","reviews"].forEach(id => $("#"+id).classList.toggle("hidden", id !== b.dataset.t));
 });
 
-function render(){
-  renderArticles();
-  renderContent();
-  renderReviews();
-}
+function render(){ renderArticles(); renderContent(); renderReviews(); }
 
-/* ARTICLES */
-
+/* ---------- ARTICLES ---------- */
 function renderArticles(){
   const p = D.products.find(x => x.id === editId) || {};
-
   $("#articles").innerHTML = `
   <div class="bg-white p-4 rounded shadow space-y-2 mb-6">
     <h2 class="text-xl">${editId ? "Edit article" : "Add article"}</h2>
-
     <input id="aName" placeholder="Title (मराठी | English)" value="${esc(p.name)}">
-
-    <div class="grid grid-cols-2 gap-2">
-      <input id="aPrice" type="number" placeholder="Price ₹" value="${esc(p.price)}">
-      <select id="aCat">
-        ${["Kurtas","Jackets","Fabrics","Festive Wear"].map(c => `<option ${p.category===c?"selected":""}>${c}</option>`).join("")}
-      </select>
-    </div>
-
+    <div class="grid grid-cols-2 gap-2"><input id="aPrice" type="number" placeholder="Price ₹" value="${esc(p.price)}">
+    <select id="aCat">${["Kurtas","Jackets","Fabrics","Festive Wear"].map(c => `<option ${p.category===c?"selected":""}>${c}</option>`).join("")}</select></div>
     <input id="aSizes" placeholder="Sizes (S, M, L)" value="${esc(p.sizes)}">
-
     <textarea id="aDesc" rows="2" placeholder="Fabric / description">${esc(p.description)}</textarea>
-
-    <label class="text-sm">Photo ${editId ? "(leave empty to keep current)" : ""}</label>
-    <input id="aImg" type="file" accept="image/*">
-
-    <div class="flex gap-2">
-      <button id="aSave" class="btn">Save article</button>
-      ${editId ? '<button id="aCancel" class="px-3">Cancel</button>' : ""}
-    </div>
+    <label class="text-sm">Photo ${editId ? "(leave empty to keep current)" : ""}</label><input id="aImg" type="file" accept="image/*">
+    <div class="flex gap-2"><button id="aSave" class="btn">Save article</button>${editId ? '<button id="aCancel" class="px-3">Cancel</button>' : ""}</div>
   </div>
-
-  <div class="space-y-2">
-    ${D.products.map(x => `
-      <div class="flex items-center gap-3 bg-white p-2 rounded shadow">
-        <img src="${esc(x.image)}" class="w-12 h-14 object-cover rounded" alt="">
-        <div class="flex-1 text-sm">
-          <b>${esc(x.name)}</b><br>
-          ₹${esc(x.price)} · ${esc(x.category)}
-        </div>
-        <button class="btn" data-e="${esc(x.id)}">Edit</button>
-        <button class="btn !bg-red-700" data-d="${esc(x.id)}">Delete</button>
-      </div>
-    `).join("")}
-  </div>`;
-
+  <div class="space-y-2">${D.products.map(x => `<div class="flex items-center gap-3 bg-white p-2 rounded shadow">
+    <img src="${esc(x.image)}" class="w-12 h-14 object-cover rounded" alt=""><div class="flex-1 text-sm"><b>${esc(x.name)}</b><br>₹${esc(x.price)} · ${esc(x.category)}</div>
+    <button class="btn" data-e="${esc(x.id)}">Edit</button><button class="btn !bg-red-700" data-d="${esc(x.id)}">Delete</button></div>`).join("")}</div>`;
   $("#aSave").onclick = saveArticle;
-
-  if (editId)
-    $("#aCancel").onclick = () => {
-      editId = null;
-      renderArticles();
-    };
-
-  document.querySelectorAll("[data-e]").forEach(b => b.onclick = () => {
-    editId = b.dataset.e;
-    renderArticles();
-    scrollTo(0,0);
-  });
-
+  if (editId) $("#aCancel").onclick = () => { editId = null; renderArticles(); };
+  document.querySelectorAll("[data-e]").forEach(b => b.onclick = () => { editId = b.dataset.e; renderArticles(); scrollTo(0,0); });
   document.querySelectorAll("[data-d]").forEach(b => b.onclick = async () => {
     if (!confirm("Delete this article?")) return;
-    D.products = D.products.filter(x => x.id !== b.dataset.d);
-    await save("Delete article");
+    D.products = D.products.filter(x => x.id !== b.dataset.d); await save("Delete article");
   });
 }
-
 async function saveArticle(){
-  const name = $("#aName").value.trim();
-  if (!name) return toast("Title is required", false);
-
+  const name = $("#aName").value.trim(); if (!name) return toast("Title is required", false);
   let item = D.products.find(x => x.id === editId);
-
-  if (!item){
-    item = {id:"p"+Date.now(), image:""};
-    D.products.push(item);
-  }
-
-  Object.assign(item, {
-    name,
-    price:Number($("#aPrice").value)||0,
-    category:$("#aCat").value,
-    sizes:$("#aSizes").value.trim(),
-    description:$("#aDesc").value.trim()
-  });
-
+  if (!item) { item = {id:"p"+Date.now(), image:""}; D.products.push(item); }
+  Object.assign(item, {name, price:Number($("#aPrice").value)||0, category:$("#aCat").value, sizes:$("#aSizes").value.trim(), description:$("#aDesc").value.trim()});
   const f = $("#aImg").files[0];
-
-  if (f){
+  if (f) {
     spin(true);
     try {
-      const data = await new Promise(res => {
-        const fr = new FileReader();
-        fr.onload = () => res(fr.result.split(",")[1]);
-        fr.readAsDataURL(f);
-      });
-
+      const data = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(fr.result.split(",")[1]); fr.readAsDataURL(f); });
       const path = "images/" + Date.now() + "-" + f.name.replace(/[^a-z0-9.]/gi, "_");
-
-      const r = await api(`/repos/${CFG.u}/${CFG.r}/contents/${path}`, {
-        method:"PUT",
-        body:JSON.stringify({message:"Upload image", content:data})
-      });
-
+      const r = await api(`/repos/${CFG.u}/${CFG.r}/contents/${path}`, {method:"PUT", body:JSON.stringify({message:"Upload image", content:data})});
       if (!r.ok) throw new Error((await r.json()).message);
-
       item.image = path;
-
-    } catch(e){
-      spin(false);
-      return toast("Image upload failed: " + e.message, false);
-    }
-
+    } catch(e){ spin(false); return toast("Image upload failed: " + e.message, false); }
     spin(false);
   }
-
-  if (!item.image)
-    item.image = "https://placehold.co/600x750/6A1B1A/FAF8F5?text=Khadi";
-
-  editId = null;
-  await save("Save article");
+  if (!item.image) item.image = "https://placehold.co/600x750/6A1B1A/FAF8F5?text=Khadi";
+  editId = null; await save("Save article");
 }
 
-/* SECTION EDITOR */
-
+/* ---------- SECTION EDITOR ---------- */
 function renderContent(){
-  $("#content").innerHTML = `
-  <div class="bg-white p-4 rounded shadow space-y-2">
-
-    <label class="text-sm">Top announcement bar</label>
-    <input id="cAnn" value="${esc(D.announcement)}">
-
-    <label class="text-sm">Hero title</label>
-    <input id="cTitle" value="${esc(D.hero.title)}">
-
-    <label class="text-sm">Hero subtitle</label>
-    <textarea id="cSub" rows="2">${esc(D.hero.subtitle)}</textarea>
-
-    <label class="text-sm">Offers (one per line)</label>
-    <textarea id="cOff" rows="3">${esc(D.offers.join("\n"))}</textarea>
-
-    <label class="text-sm">Shop name</label>
-    <input id="sName" value="${esc(D.store.name)}">
-
-    <label class="text-sm">Address</label>
-    <input id="sAddr" value="${esc(D.store.address)}">
-
-    <label class="text-sm">Business hours</label>
-    <input id="sHrs" value="${esc(D.store.hours)}">
-
-    <label class="text-sm">WhatsApp number (country code, no +, e.g. 919876543210)</label>
-    <input id="sPh" value="${esc(D.store.phone)}">
-
-    <label class="text-sm">Phone shown on site</label>
-    <input id="sPhD" value="${esc(D.store.phoneDisplay)}">
-
-    <button id="cSave" class="btn">Save changes</button>
-
-  </div>`;
-
+  $("#content").innerHTML = `<div class="bg-white p-4 rounded shadow space-y-2">
+    <label class="text-sm">Top announcement bar</label><input id="cAnn" value="${esc(D.announcement)}">
+    <label class="text-sm">Hero title</label><input id="cTitle" value="${esc(D.hero.title)}">
+    <label class="text-sm">Hero subtitle</label><textarea id="cSub" rows="2">${esc(D.hero.subtitle)}</textarea>
+    <label class="text-sm">Offers (one per line)</label><textarea id="cOff" rows="3">${esc(D.offers.join("\n"))}</textarea>
+    <label class="text-sm">Shop name</label><input id="sName" value="${esc(D.store.name)}">
+    <label class="text-sm">Address</label><input id="sAddr" value="${esc(D.store.address)}">
+    <label class="text-sm">Business hours</label><input id="sHrs" value="${esc(D.store.hours)}">
+    <label class="text-sm">WhatsApp number (country code, no +, e.g. 919876543210)</label><input id="sPh" value="${esc(D.store.phone)}">
+    <label class="text-sm">Phone shown on site</label><input id="sPhD" value="${esc(D.store.phoneDisplay)}">
+    <button id="cSave" class="btn">Save changes</button></div>`;
   $("#cSave").onclick = () => {
-    D.announcement = $("#cAnn").value;
-    D.hero = {
-      title:$("#cTitle").value,
-      subtitle:$("#cSub").value
-    };
-
+    D.announcement = $("#cAnn").value; D.hero = {title:$("#cTitle").value, subtitle:$("#cSub").value};
     D.offers = $("#cOff").value.split("\n").map(s => s.trim()).filter(Boolean);
-
-    D.store = {
-      name:$("#sName").value,
-      address:$("#sAddr").value,
-      hours:$("#sHrs").value,
-      phone:$("#sPh").value.replace(/\D/g,""),
-      phoneDisplay:$("#sPhD").value
-    };
-
+    D.store = {name:$("#sName").value, address:$("#sAddr").value, hours:$("#sHrs").value, phone:$("#sPh").value.replace(/\D/g,""), phoneDisplay:$("#sPhD").value};
     save("Update site content");
   };
 }
 
-/* REVIEWS */
-
+/* ---------- REVIEWS ---------- */
 function renderReviews(){
-  $("#reviews").innerHTML = `
-  <div class="bg-white p-4 rounded shadow space-y-2 mb-6">
-
-    <h2 class="text-xl">Add review</h2>
-
-    <input id="vName" placeholder="Customer name">
-
-    <select id="vStar">
-      <option>5</option>
-      <option>4</option>
-      <option>3</option>
-      <option>2</option>
-      <option>1</option>
-    </select>
-
-    <textarea id="vText" rows="2" placeholder="Review text (paste from Formspree email)"></textarea>
-
-    <button id="vAdd" class="btn">Add &amp; publish</button>
-
-  </div>
-
-  <div class="space-y-2">
-    ${D.reviews.map(v => `
-      <div class="bg-white p-3 rounded shadow text-sm flex gap-3 items-center">
-
-        <div class="flex-1">
-          <b>${esc(v.name)}</b> ${"★".repeat(v.rating)}<br>
-          ${esc(v.text)}<br>
-          <i>${v.approved ? "Published" : "Hidden"}</i>
-        </div>
-
-        <button class="btn" data-a="${esc(v.id)}">
-          ${v.approved ? "Hide" : "Approve"}
-        </button>
-
-        <button class="btn !bg-red-700" data-x="${esc(v.id)}">
-          Delete
-        </button>
-
-      </div>
-    `).join("")}
-  </div>`;
-
-  $("#vAdd").onclick = () => {
-    const n = $("#vName").value.trim();
-    const t = $("#vText").value.trim();
-
-    if (!n || !t)
-      return toast("Name and text required", false);
-
-    D.reviews.push({
-      id:"r"+Date.now(),
-      name:n,
-      rating:Number($("#vStar").value),
-      text:t,
-      approved:true
-    });
-
-    save("Add review");
-  };
-
-  document.querySelectorAll("[data-a]").forEach(b => b.onclick = () => {
-    const v = D.reviews.find(x => x.id === b.dataset.a);
-    v.approved = !v.approved;
-    save("Toggle review");
-  });
-
-  document.querySelectorAll("[data-x]").forEach(b => b.onclick = () => {
-    if (confirm("Delete review?")){
-      D.reviews = D.reviews.filter(x => x.id !== b.dataset.x);
-      save("Delete review");
-    }
-  });
+  $("#reviews").innerHTML = `<div class="bg-white p-4 rounded shadow space-y-2 mb-6"><h2 class="text-xl">Add review</h2>
+    <input id="vName" placeholder="Customer name"><select id="vStar"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+    <textarea id="vText" rows="2" placeholder="Review text (paste from Formspree email)"></textarea><button id="vAdd" class="btn">Add &amp; publish</button></div>
+    <div class="space-y-2">${D.reviews.map(v => `<div class="bg-white p-3 rounded shadow text-sm flex gap-3 items-center">
+      <div class="flex-1"><b>${esc(v.name)}</b> ${"★".repeat(v.rating)}<br>${esc(v.text)}<br><i>${v.approved ? "Published" : "Hidden"}</i></div>
+      <button class="btn" data-a="${esc(v.id)}">${v.approved ? "Hide" : "Approve"}</button><button class="btn !bg-red-700" data-x="${esc(v.id)}">Delete</button></div>`).join("")}</div>`;
+  $("#vAdd").onclick = () => { const n = $("#vName").value.trim(), t = $("#vText").value.trim(); if (!n || !t) return toast("Name and text required", false);
+    D.reviews.push({id:"r"+Date.now(), name:n, rating:Number($("#vStar").value), text:t, approved:true}); save("Add review"); };
+  document.querySelectorAll("[data-a]").forEach(b => b.onclick = () => { const v = D.reviews.find(x => x.id === b.dataset.a); v.approved = !v.approved; save("Toggle review"); });
+  document.querySelectorAll("[data-x]").forEach(b => b.onclick = () => { if (confirm("Delete review?")) { D.reviews = D.reviews.filter(x => x.id !== b.dataset.x); save("Delete review"); } });
 }
 
-if (CFG) start();
-
+if (CFG) start();   // auto-login if token stored
 </script>
 </body>
 </html>
