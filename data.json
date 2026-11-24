@@ -38,6 +38,15 @@
       "description": "खास प्रसंगासाठी पारंपरिक पोशाख",
       "price": 2500,
       "image": "https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&w=900&q=85"
+    },
+    {
+      "id": "p1795540596342",
+      "image": "images/1795540596377-handloom_khadi.png",
+      "name": "सणासुदीचा सेट | Festive Kurta Pyjama Set",
+      "price": 3500,
+      "category": "Kurtas",
+      "sizes": "S, M, L, XL",
+      "description": "KHADI"
     }
   ],
   "reviews": [
