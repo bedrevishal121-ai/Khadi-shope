@@ -3,52 +3,366 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#5b1f1f">
+  <meta name="theme-color" content="#4e1818">
   <meta name="description" content="सोहळा खादी शॉप, वाशिम — दर्जेदार हँडस्पन खादी, कुर्ता, नेहरू जॅकेट आणि सणासुदीचे कपडे.">
   <title>सोहळा खादी शॉप | Washim</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Yatra+One&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
   <style>
-    :root{--hero-image:url('https://raw.githubusercontent.com/bedrevishal121-ai/Khadi-shope/main/images/hero.png'); /* HIGHLIGHT: HERO IMAGE LINK */ --ink:#271d18;--wine:#5b1f1f;--wine2:#7a3130;--gold:#c39a44;--cream:#f7f2e8;--paper:#fffdf8;--sage:#68735a;--line:rgba(39,29,24,.12);--shadow:0 18px 50px rgba(59,38,24,.12)}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream)}body.no-scroll{overflow:hidden}
-    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.17;background-image:radial-gradient(rgba(91,31,31,.22) .5px,transparent .5px);background-size:5px 5px;z-index:-1}
-    a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}img{display:block;width:100%}.serif{font-family:"Tiro Devanagari Marathi",serif}.display{font-family:"Yatra One",cursive}
-    .shell{width:min(1180px,calc(100% - 40px));margin:auto}.announcement{background:var(--wine);color:#fff;font-size:.78rem;text-align:center;padding:.55rem 1rem}.announcement span{color:#edcc7c}
-    .nav-wrap{position:sticky;top:0;z-index:50;border-bottom:1px solid var(--line);background:rgba(247,242,232,.92);backdrop-filter:blur(16px)}nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:10px}.brand-mark{width:44px;height:44px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--wine);font-family:"Yatra One";font-size:1.3rem}.brand strong{display:block;font-family:"Yatra One";font-size:1.2rem;color:var(--wine)}.brand small{font-size:.65rem;letter-spacing:.13em;color:#78675c}
-    .navlinks{display:flex;gap:26px;font-size:.9rem}.navlinks a:hover{color:var(--wine2)}.nav-actions{display:flex;gap:8px}.icon-btn{position:relative;border:1px solid var(--line);background:transparent;width:42px;height:42px;border-radius:50%;font-size:1.1rem}.cart-count{position:absolute;top:-5px;right:-4px;background:var(--gold);width:18px;height:18px;border-radius:50%;font-size:.65rem;display:grid;place-items:center}.menu-btn{display:none}
-    .hero{min-height:650px;position:relative;display:grid;align-items:center;overflow:hidden;background:#3d1d17}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,16,14,.86),rgba(32,16,14,.48) 56%,rgba(32,16,14,.12)),var(--hero-image) center/cover no-repeat}.hero-inner{position:relative;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;min-height:650px;color:#fff}.hero-copy{padding:60px 0}.eyebrow{color:#edcc7c;letter-spacing:.16em;text-transform:uppercase;font-size:.78rem}.hero h1{font:clamp(3rem,6vw,5.7rem)/1.2 "Tiro Devanagari Marathi",serif;margin:20px 0}.hero h1 em{color:#edcc7c;font-style:normal}.hero p{font-size:1.05rem;line-height:1.8;max-width:560px;color:#f2e8dc}.btn{display:inline-block;background:var(--gold);color:#241914;padding:14px 22px;border-radius:2px;font-weight:700;margin-top:12px}.btn:hover{background:#f0d293}.hero-seal{justify-self:end;width:210px;height:210px;border:1px solid rgba(237,204,124,.8);border-radius:50%;display:grid;place-items:center;text-align:center;color:#edcc7c;font-family:"Yatra One";font-size:1.2rem;line-height:1.6;background:rgba(45,24,18,.28);box-shadow:0 0 0 9px rgba(237,204,124,.08)}
-    .promise{background:var(--wine);color:#fff;border-top:1px solid rgba(255,255,255,.12)}.promise-grid{display:grid;grid-template-columns:repeat(4,1fr)}.promise-item{padding:1.35rem 1.2rem;display:flex;gap:12px;align-items:center;border-right:1px solid rgba(255,255,255,.12)}.promise-item:last-child{border:0}.promise-icon{color:#edcc7c;font-size:1.3rem}.promise-item strong,.promise-item small{display:block}.promise-item small{font-size:.72rem;color:#ddcfc2;margin-top:3px}
-    section{padding:95px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2.2rem}.kicker{color:var(--wine);text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;font-weight:700}.section-head h2{font:clamp(2rem,4vw,3.2rem) "Tiro Devanagari Marathi",serif;margin:.5rem 0 0;color:var(--wine)}.section-head p{max-width:400px;line-height:1.7;color:#665a50}
-    .filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.filter{border:1px solid var(--line);background:transparent;padding:9px 16px;border-radius:30px;font-size:.82rem}.filter.active,.filter:hover{background:var(--wine);color:#fff}.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product-card{background:var(--paper);border:1px solid var(--line);position:relative;overflow:hidden}.product-media{height:320px;overflow:hidden;background:#e8dfd2}.product-media img{height:100%;object-fit:cover;transition:transform .4s}.product-card:hover .product-media img{transform:scale(1.04)}.product-info{padding:16px}.product-info h3{margin:0 0 7px;font:1.15rem "Tiro Devanagari Marathi",serif}.product-info p{margin:0 0 12px;color:#75675c;font-size:.8rem;line-height:1.55}.product-bottom{display:flex;justify-content:space-between;align-items:center}.price{font-weight:700;color:var(--wine)}.add-btn{background:var(--wine);color:#fff;border:0;padding:9px 12px;font-size:.76rem}.add-btn:hover{background:var(--gold);color:var(--ink)}
-    .story{background:var(--wine);color:#fff;overflow:hidden}.story-grid{display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:70px}.story-image{position:relative}.story-image img{height:480px;object-fit:cover}.story h2{font:clamp(2.2rem,4vw,3.7rem) "Tiro Devanagari Marathi",serif;margin:14px 0}.story p{line-height:1.9;color:#eaded4}.story .kicker{color:#edcc7c}
-    .reviews{background:var(--paper)}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{border:1px solid var(--line);padding:28px;background:#fff}.stars{color:var(--gold);letter-spacing:.1em}.review p{line-height:1.8;color:#5e5147}.review b{font-family:"Tiro Devanagari Marathi",serif}
-    .visit-grid{display:grid;grid-template-columns:.85fr 1.15fr;min-height:430px}.visit{background:var(--wine);color:#fff;padding:50px}.visit h2{font:3rem "Tiro Devanagari Marathi",serif;margin:12px 0}.visit-list{margin:2rem 0}.visit-list div{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.18)}.map{min-height:400px;background:linear-gradient(rgba(39,29,24,.1),rgba(39,29,24,.1)),url('https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=80') center/cover}
-    footer{background:#251a15;color:#d9cfc4;padding:55px 0 25px}.footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:50px}.footer-brand{font-family:"Yatra One";font-size:1.6rem;color:#edc873}footer p{line-height:1.8;font-size:.88rem;color:#bfb2a6}footer h3{color:#fff;font-size:.95rem}footer a{display:block;margin:10px 0;font-size:.86rem}.copyright{border-top:1px solid #ffffff20;margin-top:35px;padding-top:20px;font-size:.75rem;color:#9e9186}
-    .cart-overlay,.search-overlay{position:fixed;inset:0;background:rgba(28,20,16,.5);z-index:80;opacity:0;pointer-events:none;transition:.25s}.cart-overlay.open,.search-overlay.open{opacity:1;pointer-events:auto}.cart-drawer{position:absolute;right:0;top:0;height:100%;width:min(440px,100%);background:var(--paper);padding:24px;transform:translateX(100%);transition:.25s;overflow:auto}.cart-overlay.open .cart-drawer{transform:none}.cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}.cart-item{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--line)}.cart-item img{width:65px;height:75px;object-fit:cover}.qty button{border:1px solid var(--line);background:transparent;padding:4px 9px}.checkout{display:block;text-align:center;background:#198754;color:#fff;padding:13px;margin-top:18px}.search-panel{position:absolute;top:12%;left:50%;transform:translateX(-50%);width:min(650px,calc(100% - 30px));background:var(--paper);padding:24px}.search-panel input{width:100%;padding:14px;border:1px solid var(--line);margin-top:20px}.toast{position:fixed;z-index:100;bottom:25px;left:50%;transform:translate(-50%,30px);background:#241a15;color:#fff;padding:.8rem 1.2rem;border-radius:3px;opacity:0;transition:.3s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
+    :root{
+      --hero-image:url('https://raw.githubusercontent.com/bedrevishal121-ai/Khadi-shope/main/images/hero.png');
+      --ink:#261913;
+      --wine:#4e1818;
+      --wine2:#732725;
+      --gold:#c99b38;
+      --gold-light:#f1d38a;
+      --cream:#f8f2e4;
+      --paper:#fffdf7;
+      --line:rgba(201,155,56,.34);
+      --line-dark:rgba(38,25,19,.16);
+      --shadow:0 16px 38px rgba(46,20,14,.14);
+      --jari-border:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 12px,var(--wine2) 12px 14px,transparent 14px 18px)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
+    body.no-scroll{overflow:hidden}
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
+      background-image:
+        radial-gradient(circle at 12px 12px,rgba(201,155,56,.28) 1.2px,transparent 1.4px),
+        radial-gradient(circle at 24px 24px,rgba(78,24,24,.12) 1px,transparent 1.2px);
+      background-size:36px 36px;z-index:-1
+    }
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+    button{cursor:pointer}
+    img{display:block;width:100%}
+    .serif{font-family:"Tiro Devanagari Marathi",serif}
+    .display{font-family:"Yatra One",cursive}
+    .shell{width:min(1180px,calc(100% - 40px));margin:auto}
 
-    /* Modern UI additions */
-    .hero{min-height:760px}.hero-inner{min-height:760px}.hero-copy{animation:heroIn .9s both}
-    @keyframes heroIn{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-    .hero:after{content:"";position:absolute;inset:auto 0 0;height:110px;background:linear-gradient(transparent,var(--cream));opacity:.12;pointer-events:none}
-    .btn,.icon-btn,.filter,.add-btn,.navlinks a,.product-card,.review{transition:all .28s cubic-bezier(.2,.8,.2,1)}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px #c39a4440}
-    .product-card,.review{border-radius:16px;box-shadow:var(--shadow)}.product-card:hover,.review:hover{transform:translateY(-7px)}
-    .product-media img{transition:transform .65s cubic-bezier(.2,.8,.2,1)}
-    section{padding:110px 0}.story-image img{border-radius:18px}
-    .map{background:none!important;min-height:430px}.map iframe{width:100%;height:100%;min-height:430px;border:0;display:block}
-    .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);display:none}
-    .cursor-dot{width:7px;height:7px;background:var(--gold)}.cursor-ring{width:34px;height:34px;border:1px solid var(--gold);transition:width .2s,height .2s,opacity .2s}
+    /* Top Jari Announcement */
+    .announcement{
+      background:linear-gradient(90deg,#3b1010,#5c1b1b,#3b1010);
+      color:#fff;font-size:.8rem;text-align:center;padding:.6rem 1rem;
+      border-bottom:2px solid var(--gold)
+    }
+    .announcement span{color:var(--gold-light);font-weight:600}
+
+    /* Traditional Header */
+    .nav-wrap{
+      position:sticky;top:0;z-index:50;
+      border-bottom:1px solid var(--line);
+      background:rgba(248,242,228,.94);backdrop-filter:blur(14px);
+      box-shadow:0 6px 24px rgba(38,25,19,.07)
+    }
+    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:11px}
+    .brand-mark{
+      width:46px;height:46px;border:2px solid var(--gold);border-radius:50%;
+      display:grid;place-items:center;color:var(--gold-light);
+      background:radial-gradient(circle,#6b2121,#3d1111);
+      font-family:"Yatra One";font-size:1.35rem;
+      box-shadow:inset 0 0 0 2px rgba(241,211,138,.35)
+    }
+    .brand strong{display:block;font-family:"Yatra One";font-size:1.22rem;color:var(--wine)}
+    .brand small{font-size:.66rem;letter-spacing:.14em;color:#786455}
+
+    .navlinks{display:flex;gap:24px;font-size:.92rem;font-weight:500}
+    .navlinks a{position:relative;padding-bottom:3px;transition:color .25s,transform .25s}
+    .navlinks a:hover{color:var(--wine2);transform:translateY(-2px)}
+    .navlinks a:after{
+      content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
+      background:var(--gold);transition:width .25s ease
+    }
+    .navlinks a:hover:after{width:100%}
+
+    .nav-actions{display:flex;gap:8px}
+    .icon-btn{
+      position:relative;border:1px solid var(--gold);background:var(--paper);
+      color:var(--wine);width:42px;height:42px;border-radius:50%;font-size:1.08rem;
+      transition:all .25s ease
+    }
+    .icon-btn:hover{background:var(--wine);color:var(--gold-light)}
+    .cart-count{
+      position:absolute;top:-5px;right:-4px;background:var(--wine);color:var(--gold-light);
+      border:1px solid var(--gold);width:19px;height:19px;border-radius:50%;
+      font-size:.66rem;font-weight:700;display:grid;place-items:center
+    }
+
+    /* Royal Jharokha Hero */
+    .hero{
+      min-height:690px;position:relative;display:grid;align-items:center;
+      overflow:hidden;background:#2f120e;
+      border-bottom:4px solid var(--gold)
+    }
+    .hero:before{
+      content:"";position:absolute;inset:0;
+      background:
+        linear-gradient(90deg,rgba(26,10,9,.9) 0%,rgba(42,15,13,.64) 55%,rgba(26,10,9,.22) 100%),
+        var(--hero-image) center top/cover no-repeat
+    }
+    .hero:after{
+      content:"";position:absolute;inset:14px;pointer-events:none;
+      border:1px solid rgba(241,211,138,.28);border-radius:6px
+    }
+    .hero-inner{
+      position:relative;z-index:2;display:grid;
+      grid-template-columns:1.15fr .85fr;align-items:center;
+      min-height:690px;color:#fff
+    }
+    .hero-copy{padding:60px 0;animation:heroIn .85s both}
+    @keyframes heroIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+    .eyebrow{
+      display:inline-block;color:var(--gold-light);letter-spacing:.16em;
+      text-transform:uppercase;font-size:.78rem;
+      border-bottom:1px solid rgba(241,211,138,.45);padding-bottom:5px
+    }
+    .hero h1{
+      font:clamp(2.9rem,5.8vw,5.4rem)/1.18 "Tiro Devanagari Marathi",serif;
+      margin:20px 0;text-shadow:0 6px 22px rgba(0,0,0,.45)
+    }
+    .hero h1 em{color:var(--gold-light);font-style:normal}
+    .hero p{font-size:1.05rem;line-height:1.85;max-width:550px;color:#f5eadc}
+
+    .btn{
+      display:inline-block;
+      background:linear-gradient(180deg,#e4be66,#bd8e2d);
+      color:#24150d;padding:13px 24px;border-radius:3px;font-weight:700;
+      margin-top:14px;border:1px solid var(--gold-light);
+      box-shadow:0 8px 20px rgba(0,0,0,.28);transition:all .25s ease
+    }
+    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(201,155,56,.38)}
+
+    .hero-seal{
+      justify-self:end;width:214px;height:214px;
+      border:2px solid var(--gold-light);border-radius:50%;
+      display:grid;place-items:center;text-align:center;
+      color:var(--gold-light);font-family:"Yatra One";font-size:1.22rem;line-height:1.6;
+      background:radial-gradient(circle,rgba(91,31,31,.65),rgba(34,13,11,.85));
+      box-shadow:0 0 0 8px rgba(201,155,56,.16),inset 0 0 20px rgba(241,211,138,.2)
+    }
+
+    /* Promise Strip */
+    .promise{background:var(--wine);color:#fff;border-bottom:3px solid var(--gold)}
+    .promise-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .promise-item{
+      padding:1.35rem 1.2rem;display:flex;gap:12px;align-items:center;
+      border-right:1px solid rgba(241,211,138,.22)
+    }
+    .promise-item:last-child{border:0}
+    .promise-icon{color:var(--gold-light);font-size:1.35rem}
+    .promise-item strong,.promise-item small{display:block}
+    .promise-item small{font-size:.74rem;color:#e7d8c7;margin-top:3px}
+
+    /* Sections */
+    section{padding:96px 0}
+    .section-head{
+      display:flex;justify-content:space-between;align-items:end;
+      gap:2rem;margin-bottom:2.2rem;padding-bottom:14px;
+      border-bottom:1px solid var(--line)
+    }
+    .kicker{color:var(--wine2);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700}
+    .section-head h2{
+      font:clamp(2rem,4vw,3.1rem) "Tiro Devanagari Marathi",serif;
+      margin:.45rem 0 0;color:var(--wine)
+    }
+    .section-head p{max-width:410px;line-height:1.75;color:#5e4f43}
+
+    /* Category Filters */
+    .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
+    .filter{
+      border:1px solid var(--gold);background:var(--paper);color:var(--ink);
+      padding:9px 18px;border-radius:30px;font-size:.84rem;font-weight:500;
+      transition:all .25s ease
+    }
+    .filter.active,.filter:hover{
+      background:var(--wine);color:var(--gold-light);border-color:var(--wine)
+    }
+
+    /* Traditional Framed Product Cards */
+    .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .product-card{
+      background:var(--paper);
+      border:1px solid var(--gold);
+      border-radius:8px;
+      position:relative;overflow:hidden;
+      box-shadow:var(--shadow),inset 0 0 0 4px var(--paper),inset 0 0 0 5px rgba(201,155,56,.32);
+      transition:transform .3s ease,box-shadow .3s ease
+    }
+    .product-card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(78,24,24,.2)}
+    .product-media{height:310px;overflow:hidden;background:#eadfce;border-bottom:2px solid var(--gold)}
+    .product-media img{height:100%;object-fit:cover;object-position:center top;transition:transform .55s ease}
+    .product-card:hover .product-media img{transform:scale(1.05)}
+    .product-info{padding:16px}
+    .product-info h3{margin:0 0 7px;font:1.15rem "Tiro Devanagari Marathi",serif;color:var(--wine)}
+    .product-info p{margin:0 0 12px;color:#6c5c4f;font-size:.82rem;line-height:1.55}
+    .product-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px dashed rgba(201,155,56,.45)}
+    .price{font-weight:700;color:var(--wine);font-size:1rem}
+    .add-btn{
+      background:var(--wine);color:var(--gold-light);
+      border:1px solid var(--gold);padding:8px 13px;border-radius:3px;
+      font-size:.76rem;font-weight:600;transition:all .25s ease
+    }
+    .add-btn:hover{background:var(--gold);color:#24150d}
+
+    /* Heritage Section */
+    .story{
+      background:linear-gradient(160deg,#491515,#672220);
+      color:#fff;overflow:hidden;
+      border-top:4px solid var(--gold);border-bottom:4px solid var(--gold)
+    }
+    .story-grid{display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:64px}
+    .story-image{position:relative;padding:10px;border:2px solid var(--gold);border-radius:10px;background:rgba(255,253,247,.06)}
+    .story-image img{height:460px;object-fit:cover;border-radius:6px}
+    .story h2{font:clamp(2.2rem,4vw,3.5rem) "Tiro Devanagari Marathi",serif;margin:14px 0}
+    .story p{line-height:1.9;color:#f1e5d6}
+    .story .kicker{color:var(--gold-light)}
+
+    /* Reviews */
+    .reviews{background:var(--paper)}
+    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .review{
+      border:1px solid var(--gold);border-radius:8px;padding:26px;
+      background:#fff;box-shadow:var(--shadow);transition:transform .28s ease
+    }
+    .review:hover{transform:translateY(-5px)}
+    .stars{color:var(--gold);letter-spacing:.12em;font-size:1rem}
+    .review p{line-height:1.8;color:#57493f}
+    .review b{font-family:"Tiro Devanagari Marathi",serif;color:var(--wine);font-size:1.05rem}
+
+    /* Visit & Map */
+    .visit-grid{display:grid;grid-template-columns:.88fr 1.12fr;min-height:430px;border-top:3px solid var(--gold)}
+    .visit{background:var(--wine);color:#fff;padding:48px}
+    .visit h2{font:2.9rem "Tiro Devanagari Marathi",serif;margin:12px 0;color:var(--gold-light)}
+    .visit-list{margin:1.8rem 0}
+    .visit-list div{padding:12px 0;border-bottom:1px solid rgba(241,211,138,.25)}
+    .map{min-height:420px;border-left:3px solid var(--gold)}
+    .map iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+
+    /* Footer */
+    footer{background:#231510;color:#dfd4c6;padding:56px 0 26px;border-top:4px solid var(--gold)}
+    .footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:48px}
+    .footer-brand{font-family:"Yatra One";font-size:1.65rem;color:var(--gold-light)}
+    footer p{line-height:1.8;font-size:.88rem;color:#c3b4a5}
+    footer h3{color:var(--gold-light);font-size:.96rem;margin-top:0}
+    footer a{display:block;margin:10px 0;font-size:.88rem;transition:color .2s}
+    footer a:hover{color:var(--gold-light)}
+    .copyright{border-top:1px solid rgba(241,211,138,.18);margin-top:36px;padding-top:20px;font-size:.78rem;color:#a59688}
+
+    /* Cart & Search Drawers */
+    .cart-overlay,.search-overlay{
+      position:fixed;inset:0;background:rgba(28,16,12,.56);backdrop-filter:blur(3px);
+      z-index:80;opacity:0;pointer-events:none;transition:.25s
+    }
+    .cart-overlay.open,.search-overlay.open{opacity:1;pointer-events:auto}
+    .cart-drawer{
+      position:absolute;right:0;top:0;height:100%;width:min(440px,100%);
+      background:var(--paper);padding:24px;border-left:3px solid var(--gold);
+      transform:translateX(100%);transition:.25s;overflow:auto
+    }
+    .cart-overlay.open .cart-drawer{transform:none}
+    .cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}
+    .cart-item{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--line-dark)}
+    .cart-item img{width:66px;height:78px;object-fit:cover;object-position:top;border:1px solid var(--gold)}
+    .qty button{border:1px solid var(--gold);background:var(--cream);color:var(--wine);padding:4px 10px;border-radius:2px}
+    .checkout{
+      display:block;text-align:center;background:#198754;color:#fff;
+      padding:13px;margin-top:18px;border-radius:4px;font-weight:700
+    }
+    .search-panel{
+      position:absolute;top:12%;left:50%;transform:translateX(-50%);
+      width:min(650px,calc(100% - 30px));background:var(--paper);
+      padding:24px;border:2px solid var(--gold);border-radius:8px
+    }
+    .search-panel input{
+      width:100%;padding:13px;border:1px solid var(--gold);border-radius:4px;
+      margin-top:18px;background:#fff
+    }
+    .toast{
+      position:fixed;z-index:100;bottom:25px;left:50%;transform:translate(-50%,30px);
+      background:var(--wine);color:var(--gold-light);border:1px solid var(--gold);
+      padding:.8rem 1.3rem;border-radius:4px;opacity:0;transition:.3s;pointer-events:none;font-weight:600
+    }
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+
+    /* Subtle Reveal & Cursor */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s,transform .65s}
+    .reveal.visible{opacity:1;transform:none}
+    .cursor-dot,.cursor-ring{
+      position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;
+      z-index:9999;transform:translate(-50%,-50%);display:none
+    }
+    .cursor-dot{width:7px;height:7px;background:var(--gold)}
+    .cursor-ring{width:34px;height:34px;border:1px solid var(--gold);transition:width .2s,height .2s}
     @media(pointer:fine){.cursor-dot,.cursor-ring{display:block}body{cursor:none}a,button{cursor:none}}
-    .cursor-ring.hover{width:48px;height:48px;background:#c39a4420}
-    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
-    .navlinks a:hover{transform:translateY(-2px)}
-    @media(max-width:900px){.hero,.hero-inner{min-height:620px}.cursor-dot,.cursor-ring{display:none}body,a,button{cursor:auto}}
-    @media(max-width:560px){section{padding:72px 0}.hero,.hero-inner{min-height:570px}.map iframe{min-height:300px}}
-    @media(max-width:900px){.navlinks{display:none}.menu-btn{display:grid}.hero-inner{grid-template-columns:1fr}.hero-seal{display:none}.hero{min-height:620px}.promise-grid{grid-template-columns:1fr 1fr}.promise-item:nth-child(2){border-right:0}.promise-item:nth-child(-n+2){border-bottom:1px solid #ffffff20}.product-grid{grid-template-columns:repeat(2,1fr)}.product-media{height:350px}.story-grid{gap:35px}.story-image img{height:400px}}
-    @media(max-width:560px){.shell{width:min(100% - 28px,1180px)}nav{height:68px}.brand strong{font-size:1.05rem}.brand-mark{width:38px;height:38px}.hero{min-height:540px}.hero-copy{padding:58px 0}.hero h1{font-size:2.65rem}.hero p{font-size:.92rem}.hero:before{background:linear-gradient(90deg,rgba(32,16,14,.8),rgba(32,16,14,.35)),var(--hero-image) 60% center/cover no-repeat}.promise-grid{grid-template-columns:1fr 1fr}.promise-item{padding:.95rem .6rem;gap:8px}.promise-item strong{font-size:.78rem}.promise-item small{font-size:.64rem}.promise-icon{font-size:1rem}section{padding:65px 0}.section-head{display:block}.section-head p{margin-top:12px}.product-grid{gap:10px}.product-media{height:230px}.product-info{padding:11px}.product-info h3{font-size:1rem}.product-info p{font-size:.72rem}.add-btn{padding:8px;font-size:.68rem}.story-grid{grid-template-columns:1fr;gap:28px}.story-image img{height:300px}.story h2{font-size:2.3rem}.review-grid{grid-template-columns:1fr}.review{padding:20px}.visit-grid{grid-template-columns:1fr}.visit{padding:35px 24px}.visit h2{font-size:2.5rem}.map{min-height:260px}.footer-grid{grid-template-columns:1fr 1fr;gap:25px}.footer-grid>div:first-child{grid-column:1/-1}.announcement{font-size:.68rem}.nav-actions{gap:5px}.icon-btn{width:38px;height:38px}}
-    @media(max-width:360px){.product-media{height:190px}.product-bottom{align-items:flex-start;gap:6px;flex-direction:column}.hero h1{font-size:2.3rem}}
+    .cursor-ring.hover{width:46px;height:46px;background:rgba(201,155,56,.14)}
+
+    /* Responsive Rules */
+    @media(max-width:900px){
+      .navlinks{gap:14px;font-size:.82rem}
+      .hero,.hero-inner{min-height:600px}
+      .hero-inner{grid-template-columns:1fr}
+      .hero-seal{display:none}
+      .promise-grid{grid-template-columns:1fr 1fr}
+      .promise-item:nth-child(2){border-right:0}
+      .promise-item:nth-child(-n+2){border-bottom:1px solid rgba(241,211,138,.2)}
+      .product-grid{grid-template-columns:repeat(2,1fr)}
+      .product-media{height:320px}
+      .story-grid{grid-template-columns:1fr;gap:34px}
+      .story-image img{height:380px}
+      .review-grid{grid-template-columns:1fr}
+      .visit-grid{grid-template-columns:1fr}
+      .map{border-left:0;border-top:3px solid var(--gold);min-height:320px}
+      .map iframe{min-height:320px}
+      .cursor-dot,.cursor-ring{display:none}
+      body,a,button{cursor:auto}
+    }
+
+    @media(max-width:600px){
+      .navlinks{display:none}
+      .shell{width:min(100% - 26px,1180px)}
+      nav{height:68px}
+      .brand strong{font-size:1.05rem}
+      .brand-mark{width:38px;height:38px;font-size:1.15rem}
+      .hero,.hero-inner{min-height:540px}
+      .hero-copy{padding:52px 0}
+      .hero h1{font-size:2.6rem}
+      .hero p{font-size:.94rem}
+      .hero:before{
+        background:
+          linear-gradient(90deg,rgba(26,10,9,.86),rgba(42,15,13,.45)),
+          var(--hero-image) 60% top/cover no-repeat
+      }
+      .promise-item{padding:.95rem .65rem;gap:8px}
+      .promise-item strong{font-size:.8rem}
+      .promise-item small{font-size:.66rem}
+      section{padding:68px 0}
+      .section-head{display:block}
+      .section-head p{margin-top:10px}
+      .product-grid{gap:12px}
+      .product-media{height:220px}
+      .product-info{padding:11px}
+      .product-info h3{font-size:1rem}
+      .product-info p{font-size:.74rem}
+      .add-btn{padding:7px 9px;font-size:.7rem}
+      .story-image img{height:290px}
+      .story h2{font-size:2.25rem}
+      .visit{padding:34px 22px}
+      .visit h2{font-size:2.4rem}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+      .footer-grid>div:first-child{grid-column:1/-1}
+      .announcement{font-size:.7rem}
+      .icon-btn{width:38px;height:38px}
+    }
+
+    @media(max-width:360px){
+      .product-media{height:185px}
+      .product-bottom{align-items:flex-start;gap:6px;flex-direction:column}
+      .hero h1{font-size:2.25rem}
+    }
   </style>
 </head>
 <body>
