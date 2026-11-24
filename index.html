@@ -1,412 +1,266 @@
+
 <!DOCTYPE html>
 <html lang="mr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#4e1818">
-  <meta name="description" content="सोहळा खादी शॉप, वाशिम — दर्जेदार हँडस्पन खादी, कुर्ता, नेहरू जॅकेट आणि सणासुदीचे कपडे.">
-  <title>सोहळा खादी शॉप | Washim</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Yatra+One&family=Tiro+Devanagari+Marathi:ital@0;1&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --hero-image:url('https://raw.githubusercontent.com/bedrevishal121-ai/Khadi-shope/main/images/hero.png');
-      --ink:#261913;
-      --wine:#4e1818;
-      --wine2:#732725;
-      --gold:#c99b38;
-      --gold-light:#f1d38a;
-      --cream:#f8f2e4;
-      --paper:#fffdf7;
-      --line:rgba(201,155,56,.34);
-      --line-dark:rgba(38,25,19,.16);
-      --shadow:0 16px 38px rgba(46,20,14,.14);
-      --jari-border:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 12px,var(--wine2) 12px 14px,transparent 14px 18px)
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);background:var(--cream);overflow-x:hidden}
-    body.no-scroll{overflow:hidden}
-    body:before{
-      content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
-      background-image:
-        radial-gradient(circle at 12px 12px,rgba(201,155,56,.28) 1.2px,transparent 1.4px),
-        radial-gradient(circle at 24px 24px,rgba(78,24,24,.12) 1px,transparent 1.2px);
-      background-size:36px 36px;z-index:-1
-    }
-    a{color:inherit;text-decoration:none}
-    button,input,textarea,select{font:inherit}
-    button{cursor:pointer}
-    img{display:block;width:100%}
-    .serif{font-family:"Tiro Devanagari Marathi",serif}
-    .display{font-family:"Yatra One",cursive}
-    .shell{width:min(1180px,calc(100% - 40px));margin:auto}
-
-    /* Top Jari Announcement */
-    .announcement{
-      background:linear-gradient(90deg,#3b1010,#5c1b1b,#3b1010);
-      color:#fff;font-size:.8rem;text-align:center;padding:.6rem 1rem;
-      border-bottom:2px solid var(--gold)
-    }
-    .announcement span{color:var(--gold-light);font-weight:600}
-
-    /* Traditional Header */
-    .nav-wrap{
-      position:sticky;top:0;z-index:50;
-      border-bottom:1px solid var(--line);
-      background:rgba(248,242,228,.94);backdrop-filter:blur(14px);
-      box-shadow:0 6px 24px rgba(38,25,19,.07)
-    }
-    nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:11px}
-    .brand-mark{
-      width:46px;height:46px;border:2px solid var(--gold);border-radius:50%;
-      display:grid;place-items:center;color:var(--gold-light);
-      background:radial-gradient(circle,#6b2121,#3d1111);
-      font-family:"Yatra One";font-size:1.35rem;
-      box-shadow:inset 0 0 0 2px rgba(241,211,138,.35)
-    }
-    .brand strong{display:block;font-family:"Yatra One";font-size:1.22rem;color:var(--wine)}
-    .brand small{font-size:.66rem;letter-spacing:.14em;color:#786455}
-
-    .navlinks{display:flex;gap:24px;font-size:.92rem;font-weight:500}
-    .navlinks a{position:relative;padding-bottom:3px;transition:color .25s,transform .25s}
-    .navlinks a:hover{color:var(--wine2);transform:translateY(-2px)}
-    .navlinks a:after{
-      content:"";position:absolute;left:0;bottom:0;width:0;height:2px;
-      background:var(--gold);transition:width .25s ease
-    }
-    .navlinks a:hover:after{width:100%}
-
-    .nav-actions{display:flex;gap:8px}
-    .icon-btn{
-      position:relative;border:1px solid var(--gold);background:var(--paper);
-      color:var(--wine);width:42px;height:42px;border-radius:50%;font-size:1.08rem;
-      transition:all .25s ease
-    }
-    .icon-btn:hover{background:var(--wine);color:var(--gold-light)}
-    .cart-count{
-      position:absolute;top:-5px;right:-4px;background:var(--wine);color:var(--gold-light);
-      border:1px solid var(--gold);width:19px;height:19px;border-radius:50%;
-      font-size:.66rem;font-weight:700;display:grid;place-items:center
-    }
-
-    /* Royal Jharokha Hero */
-    .hero{
-      min-height:690px;position:relative;display:grid;align-items:center;
-      overflow:hidden;background:#2f120e;
-      border-bottom:4px solid var(--gold)
-    }
-    .hero:before{
-      content:"";position:absolute;inset:0;
-      background:
-        linear-gradient(90deg,rgba(26,10,9,.9) 0%,rgba(42,15,13,.64) 55%,rgba(26,10,9,.22) 100%),
-        var(--hero-image) center top/cover no-repeat
-    }
-    .hero:after{
-      content:"";position:absolute;inset:14px;pointer-events:none;
-      border:1px solid rgba(241,211,138,.28);border-radius:6px
-    }
-    .hero-inner{
-      position:relative;z-index:2;display:grid;
-      grid-template-columns:1.15fr .85fr;align-items:center;
-      min-height:690px;color:#fff
-    }
-    .hero-copy{padding:60px 0;animation:heroIn .85s both}
-    @keyframes heroIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-    .eyebrow{
-      display:inline-block;color:var(--gold-light);letter-spacing:.16em;
-      text-transform:uppercase;font-size:.78rem;
-      border-bottom:1px solid rgba(241,211,138,.45);padding-bottom:5px
-    }
-    .hero h1{
-      font:clamp(2.9rem,5.8vw,5.4rem)/1.18 "Tiro Devanagari Marathi",serif;
-      margin:20px 0;text-shadow:0 6px 22px rgba(0,0,0,.45)
-    }
-    .hero h1 em{color:var(--gold-light);font-style:normal}
-    .hero p{font-size:1.05rem;line-height:1.85;max-width:550px;color:#f5eadc}
-
-    .btn{
-      display:inline-block;
-      background:linear-gradient(180deg,#e4be66,#bd8e2d);
-      color:#24150d;padding:13px 24px;border-radius:3px;font-weight:700;
-      margin-top:14px;border:1px solid var(--gold-light);
-      box-shadow:0 8px 20px rgba(0,0,0,.28);transition:all .25s ease
-    }
-    .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(201,155,56,.38)}
-
-    .hero-seal{
-      justify-self:end;width:214px;height:214px;
-      border:2px solid var(--gold-light);border-radius:50%;
-      display:grid;place-items:center;text-align:center;
-      color:var(--gold-light);font-family:"Yatra One";font-size:1.22rem;line-height:1.6;
-      background:radial-gradient(circle,rgba(91,31,31,.65),rgba(34,13,11,.85));
-      box-shadow:0 0 0 8px rgba(201,155,56,.16),inset 0 0 20px rgba(241,211,138,.2)
-    }
-
-    /* Promise Strip */
-    .promise{background:var(--wine);color:#fff;border-bottom:3px solid var(--gold)}
-    .promise-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-    .promise-item{
-      padding:1.35rem 1.2rem;display:flex;gap:12px;align-items:center;
-      border-right:1px solid rgba(241,211,138,.22)
-    }
-    .promise-item:last-child{border:0}
-    .promise-icon{color:var(--gold-light);font-size:1.35rem}
-    .promise-item strong,.promise-item small{display:block}
-    .promise-item small{font-size:.74rem;color:#e7d8c7;margin-top:3px}
-
-    /* Sections */
-    section{padding:96px 0}
-    .section-head{
-      display:flex;justify-content:space-between;align-items:end;
-      gap:2rem;margin-bottom:2.2rem;padding-bottom:14px;
-      border-bottom:1px solid var(--line)
-    }
-    .kicker{color:var(--wine2);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700}
-    .section-head h2{
-      font:clamp(2rem,4vw,3.1rem) "Tiro Devanagari Marathi",serif;
-      margin:.45rem 0 0;color:var(--wine)
-    }
-    .section-head p{max-width:410px;line-height:1.75;color:#5e4f43}
-
-    /* Category Filters */
-    .filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:26px}
-    .filter{
-      border:1px solid var(--gold);background:var(--paper);color:var(--ink);
-      padding:9px 18px;border-radius:30px;font-size:.84rem;font-weight:500;
-      transition:all .25s ease
-    }
-    .filter.active,.filter:hover{
-      background:var(--wine);color:var(--gold-light);border-color:var(--wine)
-    }
-
-    /* Traditional Framed Product Cards */
-    .product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .product-card{
-      background:var(--paper);
-      border:1px solid var(--gold);
-      border-radius:8px;
-      position:relative;overflow:hidden;
-      box-shadow:var(--shadow),inset 0 0 0 4px var(--paper),inset 0 0 0 5px rgba(201,155,56,.32);
-      transition:transform .3s ease,box-shadow .3s ease
-    }
-    .product-card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(78,24,24,.2)}
-    .product-media{height:310px;overflow:hidden;background:#eadfce;border-bottom:2px solid var(--gold)}
-    .product-media img{height:100%;object-fit:cover;object-position:center top;transition:transform .55s ease}
-    .product-card:hover .product-media img{transform:scale(1.05)}
-    .product-info{padding:16px}
-    .product-info h3{margin:0 0 7px;font:1.15rem "Tiro Devanagari Marathi",serif;color:var(--wine)}
-    .product-info p{margin:0 0 12px;color:#6c5c4f;font-size:.82rem;line-height:1.55}
-    .product-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px dashed rgba(201,155,56,.45)}
-    .price{font-weight:700;color:var(--wine);font-size:1rem}
-    .add-btn{
-      background:var(--wine);color:var(--gold-light);
-      border:1px solid var(--gold);padding:8px 13px;border-radius:3px;
-      font-size:.76rem;font-weight:600;transition:all .25s ease
-    }
-    .add-btn:hover{background:var(--gold);color:#24150d}
-
-    /* Heritage Section */
-    .story{
-      background:linear-gradient(160deg,#491515,#672220);
-      color:#fff;overflow:hidden;
-      border-top:4px solid var(--gold);border-bottom:4px solid var(--gold)
-    }
-    .story-grid{display:grid;grid-template-columns:.95fr 1.05fr;align-items:center;gap:64px}
-    .story-image{position:relative;padding:10px;border:2px solid var(--gold);border-radius:10px;background:rgba(255,253,247,.06)}
-    .story-image img{height:460px;object-fit:cover;border-radius:6px}
-    .story h2{font:clamp(2.2rem,4vw,3.5rem) "Tiro Devanagari Marathi",serif;margin:14px 0}
-    .story p{line-height:1.9;color:#f1e5d6}
-    .story .kicker{color:var(--gold-light)}
-
-    /* Reviews */
-    .reviews{background:var(--paper)}
-    .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .review{
-      border:1px solid var(--gold);border-radius:8px;padding:26px;
-      background:#fff;box-shadow:var(--shadow);transition:transform .28s ease
-    }
-    .review:hover{transform:translateY(-5px)}
-    .stars{color:var(--gold);letter-spacing:.12em;font-size:1rem}
-    .review p{line-height:1.8;color:#57493f}
-    .review b{font-family:"Tiro Devanagari Marathi",serif;color:var(--wine);font-size:1.05rem}
-
-    /* Visit & Map */
-    .visit-grid{display:grid;grid-template-columns:.88fr 1.12fr;min-height:430px;border-top:3px solid var(--gold)}
-    .visit{background:var(--wine);color:#fff;padding:48px}
-    .visit h2{font:2.9rem "Tiro Devanagari Marathi",serif;margin:12px 0;color:var(--gold-light)}
-    .visit-list{margin:1.8rem 0}
-    .visit-list div{padding:12px 0;border-bottom:1px solid rgba(241,211,138,.25)}
-    .map{min-height:420px;border-left:3px solid var(--gold)}
-    .map iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
-
-    /* Footer */
-    footer{background:#231510;color:#dfd4c6;padding:56px 0 26px;border-top:4px solid var(--gold)}
-    .footer-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:48px}
-    .footer-brand{font-family:"Yatra One";font-size:1.65rem;color:var(--gold-light)}
-    footer p{line-height:1.8;font-size:.88rem;color:#c3b4a5}
-    footer h3{color:var(--gold-light);font-size:.96rem;margin-top:0}
-    footer a{display:block;margin:10px 0;font-size:.88rem;transition:color .2s}
-    footer a:hover{color:var(--gold-light)}
-    .copyright{border-top:1px solid rgba(241,211,138,.18);margin-top:36px;padding-top:20px;font-size:.78rem;color:#a59688}
-
-    /* Cart & Search Drawers */
-    .cart-overlay,.search-overlay{
-      position:fixed;inset:0;background:rgba(28,16,12,.56);backdrop-filter:blur(3px);
-      z-index:80;opacity:0;pointer-events:none;transition:.25s
-    }
-    .cart-overlay.open,.search-overlay.open{opacity:1;pointer-events:auto}
-    .cart-drawer{
-      position:absolute;right:0;top:0;height:100%;width:min(440px,100%);
-      background:var(--paper);padding:24px;border-left:3px solid var(--gold);
-      transform:translateX(100%);transition:.25s;overflow:auto
-    }
-    .cart-overlay.open .cart-drawer{transform:none}
-    .cart-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:15px}
-    .cart-item{display:flex;gap:12px;padding:15px 0;border-bottom:1px solid var(--line-dark)}
-    .cart-item img{width:66px;height:78px;object-fit:cover;object-position:top;border:1px solid var(--gold)}
-    .qty button{border:1px solid var(--gold);background:var(--cream);color:var(--wine);padding:4px 10px;border-radius:2px}
-    .checkout{
-      display:block;text-align:center;background:#198754;color:#fff;
-      padding:13px;margin-top:18px;border-radius:4px;font-weight:700
-    }
-    .search-panel{
-      position:absolute;top:12%;left:50%;transform:translateX(-50%);
-      width:min(650px,calc(100% - 30px));background:var(--paper);
-      padding:24px;border:2px solid var(--gold);border-radius:8px
-    }
-    .search-panel input{
-      width:100%;padding:13px;border:1px solid var(--gold);border-radius:4px;
-      margin-top:18px;background:#fff
-    }
-    .toast{
-      position:fixed;z-index:100;bottom:25px;left:50%;transform:translate(-50%,30px);
-      background:var(--wine);color:var(--gold-light);border:1px solid var(--gold);
-      padding:.8rem 1.3rem;border-radius:4px;opacity:0;transition:.3s;pointer-events:none;font-weight:600
-    }
-    .toast.show{opacity:1;transform:translate(-50%,0)}
-
-    /* Subtle Reveal & Cursor */
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s,transform .65s}
-    .reveal.visible{opacity:1;transform:none}
-    .cursor-dot,.cursor-ring{
-      position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;
-      z-index:9999;transform:translate(-50%,-50%);display:none
-    }
-    .cursor-dot{width:7px;height:7px;background:var(--gold)}
-    .cursor-ring{width:34px;height:34px;border:1px solid var(--gold);transition:width .2s,height .2s}
-    @media(pointer:fine){.cursor-dot,.cursor-ring{display:block}body{cursor:none}a,button{cursor:none}}
-    .cursor-ring.hover{width:46px;height:46px;background:rgba(201,155,56,.14)}
-
-    /* Responsive Rules */
-    @media(max-width:900px){
-      .navlinks{gap:14px;font-size:.82rem}
-      .hero,.hero-inner{min-height:600px}
-      .hero-inner{grid-template-columns:1fr}
-      .hero-seal{display:none}
-      .promise-grid{grid-template-columns:1fr 1fr}
-      .promise-item:nth-child(2){border-right:0}
-      .promise-item:nth-child(-n+2){border-bottom:1px solid rgba(241,211,138,.2)}
-      .product-grid{grid-template-columns:repeat(2,1fr)}
-      .product-media{height:320px}
-      .story-grid{grid-template-columns:1fr;gap:34px}
-      .story-image img{height:380px}
-      .review-grid{grid-template-columns:1fr}
-      .visit-grid{grid-template-columns:1fr}
-      .map{border-left:0;border-top:3px solid var(--gold);min-height:320px}
-      .map iframe{min-height:320px}
-      .cursor-dot,.cursor-ring{display:none}
-      body,a,button{cursor:auto}
-    }
-
-    @media(max-width:600px){
-      .navlinks{display:none}
-      .shell{width:min(100% - 26px,1180px)}
-      nav{height:68px}
-      .brand strong{font-size:1.05rem}
-      .brand-mark{width:38px;height:38px;font-size:1.15rem}
-      .hero,.hero-inner{min-height:540px}
-      .hero-copy{padding:52px 0}
-      .hero h1{font-size:2.6rem}
-      .hero p{font-size:.94rem}
-      .hero:before{
-        background:
-          linear-gradient(90deg,rgba(26,10,9,.86),rgba(42,15,13,.45)),
-          var(--hero-image) 60% top/cover no-repeat
-      }
-      .promise-item{padding:.95rem .65rem;gap:8px}
-      .promise-item strong{font-size:.8rem}
-      .promise-item small{font-size:.66rem}
-      section{padding:68px 0}
-      .section-head{display:block}
-      .section-head p{margin-top:10px}
-      .product-grid{gap:12px}
-      .product-media{height:220px}
-      .product-info{padding:11px}
-      .product-info h3{font-size:1rem}
-      .product-info p{font-size:.74rem}
-      .add-btn{padding:7px 9px;font-size:.7rem}
-      .story-image img{height:290px}
-      .story h2{font-size:2.25rem}
-      .visit{padding:34px 22px}
-      .visit h2{font-size:2.4rem}
-      .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
-      .footer-grid>div:first-child{grid-column:1/-1}
-      .announcement{font-size:.7rem}
-      .icon-btn{width:38px;height:38px}
-    }
-
-    @media(max-width:360px){
-      .product-media{height:185px}
-      .product-bottom{align-items:flex-start;gap:6px;flex-direction:column}
-      .hero h1{font-size:2.25rem}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#4e1818">
+<title>सोहळा खादी शॉप | Washim</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tiro+Devanagari+Marathi&family=Yatra+One&display=swap" rel="stylesheet">
+<style>
+:root{
+--wine:#4e1818;--wine2:#762929;--gold:#c99b38;
+--gold2:#f1d38a;--cream:#f8f2e4;--paper:#fffdf7;
+--ink:#261913;--shadow:0 15px 35px #32171018;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}
+img{width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.shell{width:min(1200px,92%);margin:auto}
+.announcement{background:var(--wine);color:white;text-align:center;padding:10px;border-bottom:2px solid var(--gold)}
+.nav-wrap{position:sticky;top:0;z-index:50;background:#f8f2e4ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--gold)}
+nav{min-height:75px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--wine)}
+.brandmark{width:44px;height:44px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:var(--wine);color:var(--gold2);font-family:"Yatra One"}
+.brand strong{font-family:"Yatra One";font-size:1.2rem}
+.brand small{display:block;font-size:.7rem;color:#786455}
+.navlinks{display:flex;gap:22px}
+.navlinks a:hover{color:var(--wine2)}
+.actions{display:flex;gap:8px}
+.iconbtn{border:1px solid var(--gold);background:white;color:var(--wine);border-radius:50%;width:42px;height:42px}
+.hero{position:relative;min-height:740px;background:#30120e;overflow:hidden;border-bottom:4px solid var(--gold)}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1a0a09e8 0%,#2a0f0d9c 46%,#1a0a0930 100%),url('https://raw.githubusercontent.com/bedrevishal121-ai/Khadi-shope/main/images/hero.png') center/cover no-repeat}
+.hero-inner{position:relative;min-height:740px;display:flex;align-items:center;color:white;padding:65px 0 150px}
+.hero-copy{max-width:750px;animation:appear .9s ease both}
+.eyebrow{color:var(--gold2);letter-spacing:3px;font-size:.8rem}
+.hero h1{font-family:"Tiro Devanagari Marathi",serif;font-size:clamp(3rem,7vw,6rem);line-height:1.23;margin:20px 0;text-shadow:0 5px 30px #0007}
+.hero h1 em{font-style:normal;color:var(--gold2)}
+.hero p{max-width:590px;line-height:1.9;font-size:1.05rem;color:#f6eadb}
+.btn{display:inline-block;padding:14px 25px;border:1px solid var(--gold2);background:linear-gradient(#e5c16c,#bb8b2b);color:#25160c;font-weight:bold;border-radius:5px;margin-top:18px;transition:.3s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #0004}
+.hero-seal{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:160px;height:160px;border:2px solid var(--gold2);border-radius:50%;background:radial-gradient(#722b2b,#2b100d);color:var(--gold2);display:grid;place-items:center;text-align:center;font-family:"Yatra One";line-height:1.7;box-shadow:0 0 0 7px #c99b3825;z-index:3}
+.promise{background:var(--wine);color:white;border-bottom:3px solid var(--gold)}
+.promisegrid{display:grid;grid-template-columns:repeat(4,1fr)}
+.promiseitem{padding:22px 15px;display:flex;gap:12px;align-items:center;border-right:1px solid #f1d38a33}
+.promiseitem:last-child{border:0}
+.promiseitem strong,.promiseitem small{display:block}
+.promiseitem small{font-size:.75rem;color:#e7d8c7;margin-top:4px}
+.promiseicon{font-size:1.5rem;color:var(--gold2)}
+section{padding:85px 0}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px;border-bottom:1px solid #c99b3855;padding-bottom:15px}
+.kicker{color:var(--wine2);font-weight:bold;font-size:.75rem;letter-spacing:3px}
+.sectionhead h2{font:clamp(2rem,4vw,3.2rem) "Tiro Devanagari Marathi";color:var(--wine);margin:8px 0}
+.sectionhead p{max-width:450px;color:#665549;line-height:1.8}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
+.filter{border:1px solid var(--gold);background:white;padding:9px 17px;border-radius:30px}
+.filter.active,.filter:hover{background:var(--wine);color:var(--gold2)}
+.productgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.productcard{background:var(--paper);border:1px solid var(--gold);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:.35s;display:flex;flex-direction:column}
+.productcard:hover{transform:translateY(-7px);box-shadow:0 20px 40px #4e18182b}
+.productmedia{aspect-ratio:3/4;overflow:hidden;background:#e7dac8}
+.productmedia img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s}
+.productcard:hover img{transform:scale(1.04)}
+.productinfo{padding:15px;display:flex;flex-direction:column;flex:1}
+.productinfo h3{font:1.2rem "Tiro Devanagari Marathi";color:var(--wine);margin:0 0 8px}
+.productinfo p{font-size:.84rem;line-height:1.6;color:#655649;flex:1}
+.productbottom{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px dashed #c99b3855;padding-top:12px}
+.price{font-weight:bold;color:var(--wine)}
+.addbtn{border:1px solid var(--gold);background:var(--wine);color:var(--gold2);padding:9px 12px;border-radius:5px}
+.addbtn:hover{background:var(--gold);color:#24150d}
+.story{background:linear-gradient(145deg,#491515,#672220);color:white;border-block:4px solid var(--gold)}
+.storygrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.storyimage{aspect-ratio:4/5;border:2px solid var(--gold);padding:9px;border-radius:12px;overflow:hidden}
+.storyimage img{height:100%;width:100%;object-fit:cover;border-radius:6px}
+.story h2{font:clamp(2.2rem,4vw,3.5rem) "Tiro Devanagari Marathi"}
+.story p{line-height:1.9;color:#f1e5d6}
+.story .kicker{color:var(--gold2)}
+.reviewgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{background:white;border:1px solid var(--gold);border-radius:10px;padding:25px;box-shadow:var(--shadow)}
+.stars{color:var(--gold);letter-spacing:3px}
+.review p{line-height:1.8;color:#55473c}
+.review b{color:var(--wine)}
+.visitgrid{display:grid;grid-template-columns:.9fr 1.1fr}
+.visit{background:var(--wine);color:white;padding:45px}
+.visit h2{font:2.5rem "Tiro Devanagari Marathi";color:var(--gold2)}
+.visitrow{padding:12px 0;border-bottom:1px solid #f1d38a35}
+.map{min-height:400px}
+.map iframe{width:100%;height:100%;min-height:400px;border:0}
+footer{background:#231510;color:#dfd4c6;padding:50px 0 25px;border-top:4px solid var(--gold)}
+.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h3,footer .footerbrand{color:var(--gold2)}
+.footerbrand{font:1.6rem "Yatra One"}
+footer p{line-height:1.8;color:#c3b4a5}
+footer a{display:block;margin:10px 0}
+.copyright{border-top:1px solid #f1d38a22;margin-top:30px;padding-top:20px;font-size:.8rem}
+.overlay{position:fixed;inset:0;background:#1b100bb9;opacity:0;pointer-events:none;z-index:80;transition:.3s}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:absolute;right:0;top:0;width:min(440px,100%);height:100%;overflow:auto;background:var(--paper);padding:25px;transform:translateX(100%);transition:.3s}
+.overlay.open .drawer{transform:none}
+.cartitem{display:flex;gap:12px;border-bottom:1px solid #ddd;padding:14px 0}
+.cartitem img{width:75px;height:90px;object-fit:cover}
+.checkout{display:block;background:#18864b;color:white;text-align:center;padding:15px;border-radius:6px;margin-top:20px}
+.searchpanel{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:min(600px,95%);background:white;padding:25px;border-radius:12px}
+.searchpanel input{width:100%;padding:13px;border:1px solid var(--gold);border-radius:5px;margin-top:15px}
+.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,30px);background:var(--wine);color:var(--gold2);padding:12px 20px;border-radius:7px;opacity:0;z-index:99;transition:.3s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(25px);transition:.65s}
+.reveal.visible{opacity:1;transform:none}
+@keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+@media(max-width:950px){
+.navlinks{gap:12px;font-size:.85rem}
+.productgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.promisegrid{grid-template-columns:repeat(2,1fr)}
+.promiseitem:nth-child(2){border-right:0}
+.promiseitem:nth-child(-n+2){border-bottom:1px solid #f1d38a33}
+.storygrid{gap:30px}
+}
+@media(max-width:650px){
+.navlinks{display:none}
+nav{min-height:68px}
+.hero,.hero-inner{min-height:670px}
+.hero-inner{padding:50px 0 190px}
+.hero:before{background:linear-gradient(90deg,#1a0a09e8,#2a0f0d80),url('https://raw.githubusercontent.com/bedrevishal121-ai/Khadi-shope/main/images/hero.png') 60% center/cover no-repeat}
+.hero h1{font-size:clamp(2.5rem,12vw,4rem)}
+.hero-seal{width:135px;height:135px;font-size:.95rem;bottom:20px}
+.promiseitem{padding:15px 9px;gap:8px}
+.promiseitem strong{font-size:.83rem}
+.promiseitem small{font-size:.68rem}
+section{padding:60px 0}
+.sectionhead{display:block}
+.productgrid{gap:12px}
+.productmedia{aspect-ratio:3/4}
+.productinfo{padding:11px}
+.productinfo h3{font-size:1rem}
+.productinfo p{font-size:.75rem}
+.productbottom{align-items:flex-start;flex-direction:column}
+.addbtn{width:100%}
+.storygrid,.visitgrid{grid-template-columns:1fr}
+.storyimage{aspect-ratio:4/3}
+.reviewgrid{grid-template-columns:1fr}
+.visit{padding:30px 22px}
+.footergrid{grid-template-columns:1fr 1fr}
+.footergrid>div:first-child{grid-column:1/-1}
+}
+@media(max-width:360px){.productgrid{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-  <div class="announcement"><span>सण-समारंभ स्पेशल कलेक्शन</span> &nbsp; • &nbsp; वाशिममध्ये उपलब्ध</div>
-  <div class="nav-wrap"><nav class="shell">
-    <a class="brand" href="#top" aria-label="Sohala Khadi home"><span class="brand-mark">स</span><span><strong>सोहळा खादी</strong><small>Sohala Khadi · Washim</small></span></a>
-    <div class="navlinks"><a href="#collection">कलेक्शन</a><a href="#heritage">आमची कथा</a><a href="#reviews">अभिप्राय</a><a href="#contact">संपर्क</a><a href="admin.html">Admin</a></div>
-    <div class="nav-actions"><button class="icon-btn" id="openSearch" aria-label="Search">⌕</button><button class="icon-btn" id="openCart" aria-label="Cart">🛍<span class="cart-count" id="cartCount">0</span></button></div>
-  </nav></div>
-  <header class="hero" id="top"><div class="shell hero-inner"><div class="hero-copy"><span class="eyebrow">Made by hand · Made in Maharashtra</span><h1>परंपरेचा<br><em>नवा सोहळा</em></h1><p>शुद्ध हाताने कातलेल्या खादीतून विणलेली परंपरा — प्रत्येक सणासाठी, प्रत्येक खास क्षणासाठी.</p><a class="btn" href="#collection">कलेक्शन पाहा&nbsp; →</a></div><div class="hero-seal">वाशिमची<br>खादी परंपरा<br>✦</div></div></header>
-  <div class="promise"><div class="shell promise-grid"><div class="promise-item"><span class="promise-icon">✦</span><div><strong>शुद्ध हातमागी</strong><small>Authentic handwoven khadi</small></div></div><div class="promise-item"><span class="promise-icon">♧</span><div><strong>नैसर्गिक कापूस</strong><small>Breathable &amp; comfortable</small></div></div><div class="promise-item"><span class="promise-icon">✂</span><div><strong>परफेक्ट फिटिंग</strong><small>Custom stitching available</small></div></div><div class="promise-item"><span class="promise-icon">♡</span><div><strong>स्थानिक व्यवसाय</strong><small>Proudly serving Washim</small></div></div></div></div>
-  <main>
-    <section id="collection"><div class="shell"><div class="section-head"><div><span class="kicker">Handpicked for you</span><h2>आपले सण, आमचे खादी</h2></div><p>परंपरेचा स्पर्श आणि आधुनिक शैलीचा सुंदर मिलाफ. तुमच्या आवडत्या खादी पोशाखाची निवड करा.</p></div><div id="filters" class="filters"></div><div id="grid" class="product-grid"></div></div></section>
-    <section class="story" id="heritage"><div class="shell story-grid"><div class="story-image"><img src="images/handloom-khadi.png" alt="हातमागावर विणलेले खादी कापड" loading="lazy"></div><div><span class="kicker">Our heritage</span><h2>प्रत्येक धाग्यात<br>एक गोष्ट विणलेली</h2><p>खादी म्हणजे केवळ वस्त्र नाही — ती आपल्या मातीशी, कारागिरांशी आणि साधेपणातील सौंदर्याशी जोडलेली परंपरा आहे. सोहळा खादीमध्ये आम्ही हीच परंपरा तुमच्या रोजच्या आणि खास प्रसंगांच्या पोशाखात आणतो.</p><p>वाशिममध्ये प्रेमाने निवडलेले कापड, मनापासून केलेली सेवा आणि प्रत्येकासाठी खास फिटिंग.</p><a class="btn" href="#contact">आमच्या दुकानाला भेट द्या</a></div></div></section>
-    <section class="reviews" id="reviews"><div class="shell"><div class="section-head"><div><span class="kicker">Customer stories</span><h2>ग्राहकांचे अभिप्राय</h2></div></div><div id="reviewGrid" class="review-grid"></div></div></section>
-    <section id="contact" style="padding:0"><div class="visit-grid"><div class="visit"><span class="kicker" style="color:#edc873">Visit our store</span><h2 id="storeName">सोहळा खादी शॉप</h2><div class="visit-list"><div id="storeAddress"></div><div id="storeHours"></div><div><a id="storePhone" href="#"></a></div></div><a class="btn" id="mapLink" target="_blank" rel="noopener">दिशा मिळवा&nbsp; ↗</a></div><div class="map" id="mapEmbed" aria-label="Google Maps location"></div></div></section>
-  </main>
-  <footer><div class="shell"><div class="footer-grid"><div><div class="footer-brand">सोहळा खादी शॉप</div><p>वाशिमच्या सणांसाठी आणि रोजच्या वापरासाठी अस्सल खादी, प्रेमाने तुमच्यापर्यंत.</p></div><div><h3>Explore</h3><a href="#collection">कलेक्शन</a><a href="#heritage">आमची कथा</a><a href="#reviews">अभिप्राय</a></div><div><h3>Visit us</h3><a href="#contact">वाशिम, महाराष्ट्र</a><a id="footerPhone" href="#"></a></div></div><div class="copyright">© <span id="year"></span> Sohala Khadi Shop. Made with care in Washim.</div></div></footer>
-  <div class="cart-overlay" id="cartOverlay"><aside class="cart-drawer"><div class="cart-head"><h3 class="display" style="margin:0">आपली निवड</h3><button class="icon-btn" id="closeCart" aria-label="Close cart">×</button></div><div id="cartItems"></div><div id="cartTotal"></div><a class="checkout" id="checkout" href="#">WhatsApp वर ऑर्डर करा</a></aside></div>
-  <div class="search-overlay" id="searchOverlay"><div class="search-panel"><div style="display:flex;justify-content:space-between"><strong class="display">कलेक्शनमध्ये शोधा</strong><button class="icon-btn" id="closeSearch" aria-label="Close search">×</button></div><input id="globalSearch" placeholder="कुर्ता, जॅकेट, कापड..."><div id="searchResults"></div></div></div>
-  <div class="toast" id="toast"></div>
-  <script>
-    const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-    let data,active='All',cart=JSON.parse(localStorage.getItem('sohala_cart')||'[]');
-    const money=n=>'₹'+Number(n).toLocaleString('en-IN');
-    async function init(){try{const saved=localStorage.getItem('sohala_store_data');data=saved?JSON.parse(saved):await (await fetch('data.json?v='+Date.now())).json()}catch(e){document.body.insertAdjacentHTML('afterbegin','<p style="background:#fff;padding:15px;text-align:center">माहिती लोड झाली नाही. कृपया पेज पुन्हा उघडा.</p>');return}renderStore();renderFilters();renderProducts();renderReviews();renderCart();$('#year').textContent=new Date().getFullYear()}
-    function renderStore(){const s=data.store;$('#storeAddress').textContent=s.address;$('#storeHours').textContent=s.hours;$('#storePhone').textContent=s.phoneDisplay;$('#storePhone').href='tel:+'+s.phone;$('#footerPhone').textContent=s.phoneDisplay;$('#footerPhone').href='tel:+'+s.phone;$('#mapLink').href='https://maps.google.com/?q='+encodeURIComponent(s.address);$('#mapEmbed').innerHTML='<iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q='+encodeURIComponent(s.address)+'&output=embed" title="Google Maps"></iframe>'}
-    function renderFilters(){const cats=['All',...new Set(data.products.map(p=>p.category))];$('#filters').innerHTML=cats.map(c=>`<button class="filter ${c===active?'active':''}" data-cat="${c}">${c==='All'?'सर्व':c}</button>`).join('');$$('.filter').forEach(b=>b.onclick=()=>{active=b.dataset.cat;renderFilters();renderProducts($('#productSearch')?.value||'')})}
-    function renderProducts(query=''){$('#grid').innerHTML=data.products.filter(p=>(active==='All'||p.category===active)&&(`${p.name} ${p.description} ${p.category}`.toLowerCase().includes(query.toLowerCase()))).map(p=>`<article class="product-card"><div class="product-media"><img src="${p.image}" alt="${p.name}" loading="lazy"></div><div class="product-info"><h3>${p.name}</h3><p>${p.description}</p><div class="product-bottom"><span class="price">${money(p.price)}</span><button class="add-btn" onclick="addToCart('${p.id}')">कार्टमध्ये जोडा</button></div></div></article>`).join('')||'<p>उत्पादने सापडली नाहीत.</p>'}
-    function renderReviews(){$('#reviewGrid').innerHTML=data.reviews.filter(r=>r.approved).map(r=>`<article class="review"><div class="stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div><p>${r.text}</p><b>${r.name}</b></article>`).join('')}
-    function addToCart(id){const p=data.products.find(x=>x.id===id),item=cart.find(x=>x.id===id);item?item.qty++:cart.push({id,qty:1});saveCart();toast('कार्टमध्ये जोडले')}
-    function saveCart(){localStorage.setItem('sohala_cart',JSON.stringify(cart));renderCart()}
-    function renderCart(){if(!data)return;const count=cart.reduce((n,x)=>n+x.qty,0);$('#cartCount').textContent=count;const rows=cart.map(x=>{const p=data.products.find(p=>p.id===x.id);return p?`<div class="cart-item"><img src="${p.image}" alt=""><div style="flex:1"><b>${p.name}</b><div>${money(p.price)} × ${x.qty}</div><div class="qty"><button onclick="changeQty('${x.id}',-1)">−</button> ${x.qty} <button onclick="changeQty('${x.id}',1)">+</button></div></div></div>`:''}).join('');$('#cartItems').innerHTML=rows||'<p>तुमचा कार्ट रिकामा आहे.</p>';const total=cart.reduce((n,x)=>n+(data.products.find(p=>p.id===x.id)?.price||0)*x.qty,0);$('#cartTotal').innerHTML=`<h3>एकूण: ${money(total)}</h3>`;const text=['नमस्कार! मला खरेदी करायची आहे:',...cart.map(x=>{const p=data.products.find(p=>p.id===x.id);return p?`${p.name} × ${x.qty} — ${money(p.price*x.qty)}`:''}),`एकूण: ${money(total)}`].join('\n');$('#checkout').href='https://wa.me/'+data.store.phone+'?text='+encodeURIComponent(text)}
-    function changeQty(id,d){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=d;if(item.qty<1)cart=cart.filter(x=>x.id!==id);saveCart()}
-    $('#openCart').onclick=()=>$('#cartOverlay').classList.add('open');$('#closeCart').onclick=()=>$('#cartOverlay').classList.remove('open');$('#cartOverlay').onclick=e=>{if(e.target===$('#cartOverlay'))$('#cartOverlay').classList.remove('open')};
-    $('#openSearch').onclick=()=>{$('#searchOverlay').classList.add('open');$('#globalSearch').focus()};$('#closeSearch').onclick=()=>$('#searchOverlay').classList.remove('open');$('#globalSearch').oninput=e=>{const q=e.target.value.toLowerCase();$('#searchResults').innerHTML=data?data.products.filter(p=>(p.name+' '+p.category+' '+p.description).toLowerCase().includes(q)).map(p=>`<p>${p.name} · ${money(p.price)}</p>`).join('')||'<p>काही सापडले नाही.</p>':''};$('#searchOverlay').onclick=e=>{if(e.target===$('#searchOverlay'))$('#searchOverlay').classList.remove('open')};
-    function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),2200)}
-    window.addToCart=addToCart;window.changeQty=changeQty;
-    const dot=document.createElement('div'),ring=document.createElement('div');dot.className='cursor-dot';ring.className='cursor-ring';document.body.append(dot,ring);
-    document.addEventListener('mousemove',e=>{dot.style.left=e.clientX+'px';dot.style.top=e.clientY+'px';ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px'});
-    document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>ring.classList.add('hover'));el.addEventListener('mouseleave',()=>ring.classList.remove('hover'))});
-    const revealObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}}),{threshold:.12});
-    document.querySelectorAll('section,.promise-item,.product-card,.review').forEach(el=>{el.classList.add('reveal');revealObserver.observe(el)});
-    init();
-  </script>
+<div class="announcement" id="announcement">सण-समारंभ स्पेशल कलेक्शन उपलब्ध</div>
+<div class="nav-wrap"><nav class="shell">
+<a class="brand" href="#top"><span class="brandmark">स</span><span><strong>सोहळा खादी</strong><small>Sohala Khadi · Washim</small></span></a>
+<div class="navlinks"><a href="#collection">कलेक्शन</a><a href="#heritage">आमची कथा</a><a href="#reviews">अभिप्राय</a><a href="#contact">संपर्क</a><a href="admin.html">Admin</a></div>
+<div class="actions"><button class="iconbtn" id="openSearch">⌕</button><button class="iconbtn" id="openCart">🛍 <span id="cartCount">0</span></button></div>
+</nav></div>
+
+<header class="hero" id="top"><div class="shell hero-inner"><div class="hero-copy">
+<span class="eyebrow">HANDCRAFTED · MADE IN MAHARASHTRA</span>
+<h1 id="heroTitle">परंपरेचा<br><em>नवा सोहळा</em></h1>
+<p id="heroSubtitle">शुद्ध हाताने कातलेल्या खादीतून विणलेली परंपरा — प्रत्येक सणासाठी, प्रत्येक खास क्षणासाठी.</p>
+<a class="btn" href="#collection">कलेक्शन पाहा&nbsp; →</a>
+</div></div>
+<div class="hero-seal" id="heroSeal">वाशिमची<br>खादी परंपरा<br>✦</div>
+</header>
+
+<div class="promise"><div class="shell promisegrid">
+<div class="promiseitem"><span class="promiseicon">✦</span><div><strong>शुद्ध हातमागी</strong><small>Authentic handwoven khadi</small></div></div>
+<div class="promiseitem"><span class="promiseicon">♧</span><div><strong>नैसर्गिक कापूस</strong><small>Breathable & comfortable</small></div></div>
+<div class="promiseitem"><span class="promiseicon">✂</span><div><strong>परफेक्ट फिटिंग</strong><small>Custom stitching available</small></div></div>
+<div class="promiseitem"><span class="promiseicon">♡</span><div><strong>स्थानिक व्यवसाय</strong><small>Proudly serving Washim</small></div></div>
+</div></div>
+
+<main>
+<section id="collection"><div class="shell">
+<div class="sectionhead"><div><span class="kicker">HANDPICKED FOR YOU</span><h2>आपले सण, आमचे खादी</h2></div><p>परंपरेचा स्पर्श आणि आधुनिक शैलीचा सुंदर मिलाफ. तुमच्या आवडत्या खादी पोशाखाची निवड करा.</p></div>
+<div class="filters" id="filters"></div><div class="productgrid" id="grid"></div>
+</div></section>
+
+<section class="story" id="heritage"><div class="shell storygrid">
+<div class="storyimage"><img src="images/handloom-khadi.png" alt="खादी विणकाम" loading="lazy"></div>
+<div><span class="kicker">OUR HERITAGE</span><h2>प्रत्येक धाग्यात<br>एक गोष्ट विणलेली</h2>
+<p>खादी म्हणजे केवळ वस्त्र नाही — ती आपल्या मातीशी, कारागिरांशी आणि साधेपणातील सौंदर्याशी जोडलेली परंपरा आहे.</p>
+<p>वाशिममध्ये प्रेमाने निवडलेले कापड, मनापासून केलेली सेवा आणि प्रत्येकासाठी खास फिटिंग.</p><a class="btn" href="#contact">आमच्या दुकानाला भेट द्या</a></div>
+</div></section>
+
+<section id="reviews"><div class="shell"><div class="sectionhead"><div><span class="kicker">CUSTOMER STORIES</span><h2>ग्राहकांचे अभिप्राय</h2></div></div><div id="reviewGrid" class="reviewgrid"></div></div></section>
+
+<section id="contact" style="padding:0"><div class="visitgrid"><div class="visit"><span class="kicker" style="color:#edc873">VISIT OUR STORE</span><h2 id="storeName">सोहळा खादी शॉप</h2><div class="visitrow" id="storeAddress"></div><div class="visitrow" id="storeHours"></div><div class="visitrow"><a id="storePhone"></a></div><a class="btn" id="mapLink" target="_blank" rel="noopener">दिशा मिळवा ↗</a></div><div class="map" id="mapEmbed"></div></div></section>
+</main>
+
+<footer><div class="shell"><div class="footergrid"><div><div class="footerbrand">सोहळा खादी शॉप</div><p>वाशिमच्या सणांसाठी आणि रोजच्या वापरासाठी अस्सल खादी, प्रेमाने तुमच्यापर्यंत.</p></div><div><h3>Explore</h3><a href="#collection">कलेक्शन</a><a href="#heritage">आमची कथा</a><a href="#reviews">अभिप्राय</a></div><div><h3>Visit us</h3><a href="#contact">वाशिम, महाराष्ट्र</a><a id="footerPhone"></a></div></div><div class="copyright">© <span id="year"></span> Sohala Khadi Shop.</div></div></footer>
+
+<div class="overlay" id="cartOverlay"><aside class="drawer"><div style="display:flex;justify-content:space-between;align-items:center"><h2>आपली निवड</h2><button class="iconbtn" id="closeCart">×</button></div><div id="cartItems"></div><div id="cartTotal"></div><a class="checkout" id="checkout" target="_blank">WhatsApp वर ऑर्डर करा</a></aside></div>
+<div class="overlay" id="searchOverlay"><div class="searchpanel"><div style="display:flex;justify-content:space-between"><strong>कलेक्शनमध्ये शोधा</strong><button class="iconbtn" id="closeSearch">×</button></div><input id="globalSearch" placeholder="कुर्ता, जॅकेट, कापड..."><div id="searchResults"></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+let data,active="All",cart=JSON.parse(localStorage.getItem("sohala_cart")||"[]");
+const money=n=>"₹"+Number(n).toLocaleString("en-IN");
+
+async function init(){
+ try{
+  const local=localStorage.getItem("sohala_store_data");
+  data=local?JSON.parse(local):await(await fetch("data.json?v="+Date.now())).json();
+ }catch(e){$("#grid").innerHTML="<p>Data load झाला नाही. data.json तपासा.</p>";return}
+ renderStore();renderFilters();renderProducts();renderReviews();renderCart();
+ $("#year").textContent=new Date().getFullYear();
+}
+function renderStore(){
+ const s=data.store;
+ $("#announcement").textContent=data.announcement||"सोहळा खादी";
+ $("#heroTitle").innerHTML=(data.hero?.title||"परंपरेचा नवा सोहळा").replace(" - ","<br>");
+ $("#heroSubtitle").textContent=data.hero?.subtitle||"";
+ $("#storeName").textContent=s.name;$("#storeAddress").textContent=s.address;
+ $("#storeHours").textContent=s.hours;
+ $("#storePhone").textContent=s.phoneDisplay;$("#storePhone").href="tel:+"+s.phone;
+ $("#footerPhone").textContent=s.phoneDisplay;$("#footerPhone").href="tel:+"+s.phone;
+ $("#mapLink").href="https://maps.google.com/?q="+encodeURIComponent(s.address);
+ $("#mapEmbed").innerHTML='<iframe loading="lazy" src="https://www.google.com/maps?q='+encodeURIComponent(s.address)+'&output=embed" title="Google Maps"></iframe>';
+}
+function renderFilters(){
+ const cats=["All",...new Set(data.products.map(p=>p.category))];
+ $("#filters").innerHTML=cats.map(c=>`<button class="filter ${c===active?"active":""}" data-cat="${c}">${c==="All"?"सर्व":c}</button>`).join("");
+ document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{active=b.dataset.cat;renderFilters();renderProducts()});
+}
+function renderProducts(query=""){
+ $("#grid").innerHTML=data.products.filter(p=>(active==="All"||p.category===active)&&(`${p.name} ${p.description} ${p.category}`.toLowerCase().includes(query.toLowerCase()))).map(p=>`
+ <article class="productcard"><div class="productmedia"><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x800?text=Khadi'"></div>
+ <div class="productinfo"><h3>${p.name}</h3><p>${p.description}</p><div class="productbottom"><span class="price">${money(p.price)}</span><button class="addbtn" onclick="addToCart('${p.id}')">कार्टमध्ये जोडा</button></div></div></article>`).join("")||"<p>उत्पादने सापडली नाहीत.</p>";
+}
+function renderReviews(){
+ $("#reviewGrid").innerHTML=(data.reviews||[]).filter(r=>r.approved).map(r=>`<article class="review"><div class="stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><p>${r.text}</p><b>${r.name}</b></article>`).join("");
+}
+function addToCart(id){const p=data.products.find(x=>x.id===id),item=cart.find(x=>x.id===id);item?item.qty++:cart.push({id,qty:1});saveCart();toast("कार्टमध्ये जोडले")}
+function saveCart(){localStorage.setItem("sohala_cart",JSON.stringify(cart));renderCart()}
+function renderCart(){
+ $("#cartCount").textContent=cart.reduce((n,x)=>n+x.qty,0);
+ $("#cartItems").innerHTML=cart.map(x=>{const p=data.products.find(p=>p.id===x.id);return p?`<div class="cartitem"><img src="${p.image}" alt=""><div style="flex:1"><b>${p.name}</b><p>${money(p.price)} × ${x.qty}</p><button onclick="changeQty('${x.id}',-1)">−</button> ${x.qty} <button onclick="changeQty('${x.id}',1)">+</button></div></div>`:""}).join("")||"<p>तुमचा कार्ट रिकामा आहे.</p>";
+ const total=cart.reduce((n,x)=>n+(data.products.find(p=>p.id===x.id)?.price||0)*x.qty,0);
+ $("#cartTotal").innerHTML="<h3>एकूण: "+money(total)+"</h3>";
+ const msg=["नमस्कार! मला खरेदी करायची आहे:",...cart.map(x=>{const p=data.products.find(p=>p.id===x.id);return p?`${p.name} × ${x.qty} — ${money(p.price*x.qty)}`:""}),`एकूण: ${money(total)}`].join("\n");
+ $("#checkout").href="https://wa.me/"+data.store.phone+"?text="+encodeURIComponent(msg);
+}
+function changeQty(id,d){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=d;if(item.qty<1)cart=cart.filter(x=>x.id!==id);saveCart()}
+function toast(t){$("#toast").textContent=t;$("#toast").classList.add("show");setTimeout(()=>$("#toast").classList.remove("show"),2200)}
+
+$("#openCart").onclick=()=>$("#cartOverlay").classList.add("open");
+$("#closeCart").onclick=()=>$("#cartOverlay").classList.remove("open");
+$("#cartOverlay").onclick=e=>{if(e.target===$("#cartOverlay"))$("#cartOverlay").classList.remove("open")};
+$("#openSearch").onclick=()=>$("#searchOverlay").classList.add("open");
+$("#closeSearch").onclick=()=>$("#searchOverlay").classList.remove("open");
+$("#globalSearch").oninput=e=>{
+ const q=e.target.value.toLowerCase();
+ $("#searchResults").innerHTML=data.products.filter(p=>(p.name+" "+p.category+" "+p.description).toLowerCase().includes(q)).map(p=>`<p>${p.name} · ${money(p.price)}</p>`).join("")||"<p>काही सापडले नाही.</p>";
+};
+$("#searchOverlay").onclick=e=>{if(e.target===$("#searchOverlay"))$("#searchOverlay").classList.remove("open")};
+window.addToCart=addToCart;window.changeQty=changeQty;
+
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll("section,.promiseitem").forEach(el=>{el.classList.add("reveal");observer.observe(el)});
+init();
+</script>
 </body>
 </html>
