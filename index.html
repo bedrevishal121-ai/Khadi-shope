@@ -1,265 +1,190 @@
-
 <!DOCTYPE html>
 <html lang="mr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#4e1818">
-<title>सोहळा खादी शॉप | Washim</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tiro+Devanagari+Marathi&family=Yatra+One&display=swap" rel="stylesheet">
+<title>सोहळा खादी शॉप | Sohala Khadi Shop, Washim</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
---wine:#4e1818;--wine2:#762929;--gold:#c99b38;
---gold2:#f1d38a;--cream:#f8f2e4;--paper:#fffdf7;
---ink:#261913;--shadow:0 15px 35px #32171018;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",sans-serif}
-img{width:100%;display:block}
-a{text-decoration:none;color:inherit}
-button{font:inherit;cursor:pointer}
-.shell{width:min(1200px,92%);margin:auto}
-.announcement{background:var(--wine);color:white;text-align:center;padding:10px;border-bottom:2px solid var(--gold)}
-.nav-wrap{position:sticky;top:0;z-index:50;background:#f8f2e4ed;backdrop-filter:blur(14px);border-bottom:1px solid var(--gold)}
-nav{min-height:75px;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.brand{display:flex;align-items:center;gap:10px;color:var(--wine)}
-.brandmark{width:44px;height:44px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;background:var(--wine);color:var(--gold2);font-family:"Yatra One"}
-.brand strong{font-family:"Yatra One";font-size:1.2rem}
-.brand small{display:block;font-size:.7rem;color:#786455}
-.navlinks{display:flex;gap:22px}
-.navlinks a:hover{color:var(--wine2)}
-.actions{display:flex;gap:8px}
-.iconbtn{border:1px solid var(--gold);background:white;color:var(--wine);border-radius:50%;width:42px;height:42px}
-.hero{position:relative;min-height:740px;background:#30120e;overflow:hidden;border-bottom:4px solid var(--gold)}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#1a0a09e8 0%,#2a0f0d9c 46%,#1a0a0930 100%),url('https://raw.githubusercontent.com/bedrevishal121-ai/Khadi-shope/main/images/hero.png') center/cover no-repeat}
-.hero-inner{position:relative;min-height:740px;display:flex;align-items:center;color:white;padding:65px 0 150px}
-.hero-copy{max-width:750px;animation:appear .9s ease both}
-.eyebrow{color:var(--gold2);letter-spacing:3px;font-size:.8rem}
-.hero h1{font-family:"Tiro Devanagari Marathi",serif;font-size:clamp(3rem,7vw,6rem);line-height:1.23;margin:20px 0;text-shadow:0 5px 30px #0007}
-.hero h1 em{font-style:normal;color:var(--gold2)}
-.hero p{max-width:590px;line-height:1.9;font-size:1.05rem;color:#f6eadb}
-.btn{display:inline-block;padding:14px 25px;border:1px solid var(--gold2);background:linear-gradient(#e5c16c,#bb8b2b);color:#25160c;font-weight:bold;border-radius:5px;margin-top:18px;transition:.3s}
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px #0004}
-.hero-seal{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:160px;height:160px;border:2px solid var(--gold2);border-radius:50%;background:radial-gradient(#722b2b,#2b100d);color:var(--gold2);display:grid;place-items:center;text-align:center;font-family:"Yatra One";line-height:1.7;box-shadow:0 0 0 7px #c99b3825;z-index:3}
-.promise{background:var(--wine);color:white;border-bottom:3px solid var(--gold)}
-.promisegrid{display:grid;grid-template-columns:repeat(4,1fr)}
-.promiseitem{padding:22px 15px;display:flex;gap:12px;align-items:center;border-right:1px solid #f1d38a33}
-.promiseitem:last-child{border:0}
-.promiseitem strong,.promiseitem small{display:block}
-.promiseitem small{font-size:.75rem;color:#e7d8c7;margin-top:4px}
-.promiseicon{font-size:1.5rem;color:var(--gold2)}
-section{padding:85px 0}
-.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:30px;border-bottom:1px solid #c99b3855;padding-bottom:15px}
-.kicker{color:var(--wine2);font-weight:bold;font-size:.75rem;letter-spacing:3px}
-.sectionhead h2{font:clamp(2rem,4vw,3.2rem) "Tiro Devanagari Marathi";color:var(--wine);margin:8px 0}
-.sectionhead p{max-width:450px;color:#665549;line-height:1.8}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:25px}
-.filter{border:1px solid var(--gold);background:white;padding:9px 17px;border-radius:30px}
-.filter.active,.filter:hover{background:var(--wine);color:var(--gold2)}
-.productgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
-.productcard{background:var(--paper);border:1px solid var(--gold);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:.35s;display:flex;flex-direction:column}
-.productcard:hover{transform:translateY(-7px);box-shadow:0 20px 40px #4e18182b}
-.productmedia{aspect-ratio:3/4;overflow:hidden;background:#e7dac8}
-.productmedia img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .5s}
-.productcard:hover img{transform:scale(1.04)}
-.productinfo{padding:15px;display:flex;flex-direction:column;flex:1}
-.productinfo h3{font:1.2rem "Tiro Devanagari Marathi";color:var(--wine);margin:0 0 8px}
-.productinfo p{font-size:.84rem;line-height:1.6;color:#655649;flex:1}
-.productbottom{display:flex;align-items:center;justify-content:space-between;gap:8px;border-top:1px dashed #c99b3855;padding-top:12px}
-.price{font-weight:bold;color:var(--wine)}
-.addbtn{border:1px solid var(--gold);background:var(--wine);color:var(--gold2);padding:9px 12px;border-radius:5px}
-.addbtn:hover{background:var(--gold);color:#24150d}
-.story{background:linear-gradient(145deg,#491515,#672220);color:white;border-block:4px solid var(--gold)}
-.storygrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-.storyimage{aspect-ratio:4/5;border:2px solid var(--gold);padding:9px;border-radius:12px;overflow:hidden}
-.storyimage img{height:100%;width:100%;object-fit:cover;border-radius:6px}
-.story h2{font:clamp(2.2rem,4vw,3.5rem) "Tiro Devanagari Marathi"}
-.story p{line-height:1.9;color:#f1e5d6}
-.story .kicker{color:var(--gold2)}
-.reviewgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.review{background:white;border:1px solid var(--gold);border-radius:10px;padding:25px;box-shadow:var(--shadow)}
-.stars{color:var(--gold);letter-spacing:3px}
-.review p{line-height:1.8;color:#55473c}
-.review b{color:var(--wine)}
-.visitgrid{display:grid;grid-template-columns:.9fr 1.1fr}
-.visit{background:var(--wine);color:white;padding:45px}
-.visit h2{font:2.5rem "Tiro Devanagari Marathi";color:var(--gold2)}
-.visitrow{padding:12px 0;border-bottom:1px solid #f1d38a35}
-.map{min-height:400px}
-.map iframe{width:100%;height:100%;min-height:400px;border:0}
-footer{background:#231510;color:#dfd4c6;padding:50px 0 25px;border-top:4px solid var(--gold)}
-.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer h3,footer .footerbrand{color:var(--gold2)}
-.footerbrand{font:1.6rem "Yatra One"}
-footer p{line-height:1.8;color:#c3b4a5}
-footer a{display:block;margin:10px 0}
-.copyright{border-top:1px solid #f1d38a22;margin-top:30px;padding-top:20px;font-size:.8rem}
-.overlay{position:fixed;inset:0;background:#1b100bb9;opacity:0;pointer-events:none;z-index:80;transition:.3s}
-.overlay.open{opacity:1;pointer-events:auto}
-.drawer{position:absolute;right:0;top:0;width:min(440px,100%);height:100%;overflow:auto;background:var(--paper);padding:25px;transform:translateX(100%);transition:.3s}
-.overlay.open .drawer{transform:none}
-.cartitem{display:flex;gap:12px;border-bottom:1px solid #ddd;padding:14px 0}
-.cartitem img{width:75px;height:90px;object-fit:cover}
-.checkout{display:block;background:#18864b;color:white;text-align:center;padding:15px;border-radius:6px;margin-top:20px}
-.searchpanel{position:absolute;top:10%;left:50%;transform:translateX(-50%);width:min(600px,95%);background:white;padding:25px;border-radius:12px}
-.searchpanel input{width:100%;padding:13px;border:1px solid var(--gold);border-radius:5px;margin-top:15px}
-.toast{position:fixed;bottom:25px;left:50%;transform:translate(-50%,30px);background:var(--wine);color:var(--gold2);padding:12px 20px;border-radius:7px;opacity:0;z-index:99;transition:.3s}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.reveal{opacity:0;transform:translateY(25px);transition:.65s}
-.reveal.visible{opacity:1;transform:none}
-@keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
-@media(max-width:950px){
-.navlinks{gap:12px;font-size:.85rem}
-.productgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.promisegrid{grid-template-columns:repeat(2,1fr)}
-.promiseitem:nth-child(2){border-right:0}
-.promiseitem:nth-child(-n+2){border-bottom:1px solid #f1d38a33}
-.storygrid{gap:30px}
-}
-@media(max-width:650px){
-.navlinks{display:none}
-nav{min-height:68px}
-.hero,.hero-inner{min-height:670px}
-.hero-inner{padding:50px 0 190px}
-.hero:before{background:linear-gradient(90deg,#1a0a09e8,#2a0f0d80),url('https://raw.githubusercontent.com/bedrevishal121-ai/Khadi-shope/main/images/hero.png') 60% center/cover no-repeat}
-.hero h1{font-size:clamp(2.5rem,12vw,4rem)}
-.hero-seal{width:135px;height:135px;font-size:.95rem;bottom:20px}
-.promiseitem{padding:15px 9px;gap:8px}
-.promiseitem strong{font-size:.83rem}
-.promiseitem small{font-size:.68rem}
-section{padding:60px 0}
-.sectionhead{display:block}
-.productgrid{gap:12px}
-.productmedia{aspect-ratio:3/4}
-.productinfo{padding:11px}
-.productinfo h3{font-size:1rem}
-.productinfo p{font-size:.75rem}
-.productbottom{align-items:flex-start;flex-direction:column}
-.addbtn{width:100%}
-.storygrid,.visitgrid{grid-template-columns:1fr}
-.storyimage{aspect-ratio:4/3}
-.reviewgrid{grid-template-columns:1fr}
-.visit{padding:30px 22px}
-.footergrid{grid-template-columns:1fr 1fr}
-.footergrid>div:first-child{grid-column:1/-1}
-}
-@media(max-width:360px){.productgrid{grid-template-columns:1fr}}
+  :root{--cream:#FAF8F5;--maroon:#6A1B1A;--gold:#D4A017;--brown:#2C1E16}
+  body{font-family:'Poppins',sans-serif;color:var(--brown);background-color:var(--cream);
+    /* linen weave texture */
+    background-image:repeating-linear-gradient(0deg,rgba(44,30,22,.035) 0 1px,transparent 1px 3px),repeating-linear-gradient(90deg,rgba(44,30,22,.035) 0 1px,transparent 1px 3px)}
+  h1,h2,h3,.brand{font-family:'Rozha One','Yatra One',serif}
+  .glass{background:rgba(250,248,245,.75);backdrop-filter:blur(12px);border-bottom:1px solid rgba(106,27,26,.15)}
+  .btn{background:var(--maroon);color:var(--cream);padding:.75rem 1.5rem;border-radius:.25rem;transition:.2s}
+  .btn:hover{background:var(--gold);color:var(--brown)}
+  .card{transform-style:preserve-3d;transition:transform .15s}
+  .card img{transition:transform .6s}.card:hover img{transform:scale(1.08)}
+  .marquee{display:flex;width:max-content;animation:scroll 30s linear infinite}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  .chip.active{background:var(--maroon);color:var(--cream)}
+  @media(prefers-reduced-motion:reduce){.marquee{animation:none}}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 </style>
 </head>
 <body>
-<div class="announcement" id="announcement">सण-समारंभ स्पेशल कलेक्शन उपलब्ध</div>
-<div class="nav-wrap"><nav class="shell">
-<a class="brand" href="#top"><span class="brandmark">स</span><span><strong>सोहळा खादी</strong><small>Sohala Khadi · Washim</small></span></a>
-<div class="navlinks"><a href="#collection">कलेक्शन</a><a href="#heritage">आमची कथा</a><a href="#reviews">अभिप्राय</a><a href="#contact">संपर्क</a><a href="admin.html">Admin</a></div>
-<div class="actions"><button class="iconbtn" id="openSearch">⌕</button><button class="iconbtn" id="openCart">🛍 <span id="cartCount">0</span></button></div>
-</nav></div>
+<div id="ann" class="bg-[#6A1B1A] text-[#FAF8F5] text-center text-sm py-2 px-3"></div>
 
-<header class="hero" id="top"><div class="shell hero-inner"><div class="hero-copy">
-<span class="eyebrow">HANDCRAFTED · MADE IN MAHARASHTRA</span>
-<h1 id="heroTitle">परंपरेचा<br><em>नवा सोहळा</em></h1>
-<p id="heroSubtitle">शुद्ध हाताने कातलेल्या खादीतून विणलेली परंपरा — प्रत्येक सणासाठी, प्रत्येक खास क्षणासाठी.</p>
-<a class="btn" href="#collection">कलेक्शन पाहा&nbsp; →</a>
-</div></div>
-<div class="hero-seal" id="heroSeal">वाशिमची<br>खादी परंपरा<br>✦</div>
+<!-- NAVBAR -->
+<nav class="glass sticky top-0 z-40 flex items-center justify-between px-5 py-3">
+  <a href="#top" class="brand text-xl text-[#6A1B1A]">सोहळा खादी</a>
+  <div class="hidden md:flex gap-6 text-sm font-medium">
+    <a href="#collection">कलेक्शन</a><a href="#heritage">वारसा</a><a href="#reviews">अभिप्राय</a><a href="#contact">संपर्क</a>
+  </div>
+</nav>
+
+<!-- HERO with curtain reveal -->
+<header id="top" class="relative h-[90vh] flex items-center justify-center text-center px-6 overflow-hidden bg-[#6A1B1A]">
+  <div class="relative z-10">
+    <h1 id="heroTitle" class="text-4xl md:text-7xl text-[#FAF8F5] leading-tight"></h1>
+    <p id="heroSub" class="mt-5 text-[#D4A017] max-w-xl mx-auto"></p>
+    <a href="#collection" class="btn inline-block mt-8 !bg-[#D4A017] !text-[#2C1E16]">कलेक्शन पहा | Explore Collection</a>
+  </div>
+  <div class="curtain absolute inset-y-0 left-0 w-1/2 bg-[#2C1E16] z-20"></div>
+  <div class="curtain absolute inset-y-0 right-0 w-1/2 bg-[#2C1E16] z-20"></div>
 </header>
 
-<div class="promise"><div class="shell promisegrid">
-<div class="promiseitem"><span class="promiseicon">✦</span><div><strong>शुद्ध हातमागी</strong><small>Authentic handwoven khadi</small></div></div>
-<div class="promiseitem"><span class="promiseicon">♧</span><div><strong>नैसर्गिक कापूस</strong><small>Breathable & comfortable</small></div></div>
-<div class="promiseitem"><span class="promiseicon">✂</span><div><strong>परफेक्ट फिटिंग</strong><small>Custom stitching available</small></div></div>
-<div class="promiseitem"><span class="promiseicon">♡</span><div><strong>स्थानिक व्यवसाय</strong><small>Proudly serving Washim</small></div></div>
-</div></div>
+<!-- OFFER MARQUEE -->
+<div class="bg-[#D4A017] text-[#2C1E16] py-2 overflow-hidden"><div id="marquee" class="marquee gap-12 font-medium"></div></div>
 
-<main>
-<section id="collection"><div class="shell">
-<div class="sectionhead"><div><span class="kicker">HANDPICKED FOR YOU</span><h2>आपले सण, आमचे खादी</h2></div><p>परंपरेचा स्पर्श आणि आधुनिक शैलीचा सुंदर मिलाफ. तुमच्या आवडत्या खादी पोशाखाची निवड करा.</p></div>
-<div class="filters" id="filters"></div><div class="productgrid" id="grid"></div>
-</div></section>
+<!-- CATALOG -->
+<section id="collection" class="max-w-6xl mx-auto px-5 py-16">
+  <h2 class="text-3xl md:text-4xl text-[#6A1B1A] mb-6">आमचे कलेक्शन | Our Collection</h2>
+  <div id="filters" class="flex flex-wrap gap-2 mb-8"></div>
+  <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+</section>
 
-<section class="story" id="heritage"><div class="shell storygrid">
-<div class="storyimage"><img src="images/handloom-khadi.png" alt="खादी विणकाम" loading="lazy"></div>
-<div><span class="kicker">OUR HERITAGE</span><h2>प्रत्येक धाग्यात<br>एक गोष्ट विणलेली</h2>
-<p>खादी म्हणजे केवळ वस्त्र नाही — ती आपल्या मातीशी, कारागिरांशी आणि साधेपणातील सौंदर्याशी जोडलेली परंपरा आहे.</p>
-<p>वाशिममध्ये प्रेमाने निवडलेले कापड, मनापासून केलेली सेवा आणि प्रत्येकासाठी खास फिटिंग.</p><a class="btn" href="#contact">आमच्या दुकानाला भेट द्या</a></div>
-</div></section>
+<!-- HERITAGE -->
+<section id="heritage" class="bg-[#2C1E16] text-[#FAF8F5] py-20 px-5">
+  <div class="max-w-3xl mx-auto space-y-10">
+    <h2 class="text-3xl md:text-4xl text-[#D4A017]">खादी: हातांनी विणलेला वारसा</h2>
+    <p class="story">चरख्यावर सूत कातले जाते, हातमागावर कापड विणले जाते. प्रत्येक धागा कारागिराच्या श्रमाची साक्ष देतो.</p>
+    <p class="story">Khadi is spun and woven by hand, cool in summer and warm in winter, and it gets softer with every wash.</p>
+    <p class="story">वाशिमच्या मातीतून, वाशिमच्या सणांसाठी: सोहळा खादी शॉप ही परंपरा पुढे नेत आहे.</p>
+  </div>
+</section>
 
-<section id="reviews"><div class="shell"><div class="sectionhead"><div><span class="kicker">CUSTOMER STORIES</span><h2>ग्राहकांचे अभिप्राय</h2></div></div><div id="reviewGrid" class="reviewgrid"></div></div></section>
+<!-- REVIEWS -->
+<section id="reviews" class="max-w-6xl mx-auto px-5 py-16">
+  <div class="flex justify-between items-center mb-6 flex-wrap gap-3">
+    <h2 class="text-3xl md:text-4xl text-[#6A1B1A]">ग्राहकांचे अभिप्राय</h2>
+    <button id="openRev" class="btn">अभिप्राय लिहा | Write a Review</button>
+  </div>
+  <div id="revGrid" class="grid md:grid-cols-3 gap-6"></div>
+</section>
 
-<section id="contact" style="padding:0"><div class="visitgrid"><div class="visit"><span class="kicker" style="color:#edc873">VISIT OUR STORE</span><h2 id="storeName">सोहळा खादी शॉप</h2><div class="visitrow" id="storeAddress"></div><div class="visitrow" id="storeHours"></div><div class="visitrow"><a id="storePhone"></a></div><a class="btn" id="mapLink" target="_blank" rel="noopener">दिशा मिळवा ↗</a></div><div class="map" id="mapEmbed"></div></div></section>
-</main>
+<!-- LOCATION + FOOTER -->
+<footer id="contact" class="bg-[#6A1B1A] text-[#FAF8F5] px-5 py-14">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+    <div class="space-y-3">
+      <h2 class="text-3xl text-[#D4A017]" id="stName"></h2>
+      <p id="stAddr"></p><p id="stHours"></p><p id="stPhone"></p>
+    </div>
+    <!-- Replace src with your Google Maps embed link -->
+    <iframe title="Map" class="w-full h-56 rounded" loading="lazy" src="https://www.google.com/maps?q=Washim,Maharashtra&output=embed"></iframe>
+  </div>
+  <p class="text-center text-xs mt-10 opacity-80">© Sohala Khadi Shop, Washim &nbsp;<a href="admin.html" aria-label="Admin login" title="Admin">🔒</a></p>
+</footer>
 
-<footer><div class="shell"><div class="footergrid"><div><div class="footerbrand">सोहळा खादी शॉप</div><p>वाशिमच्या सणांसाठी आणि रोजच्या वापरासाठी अस्सल खादी, प्रेमाने तुमच्यापर्यंत.</p></div><div><h3>Explore</h3><a href="#collection">कलेक्शन</a><a href="#heritage">आमची कथा</a><a href="#reviews">अभिप्राय</a></div><div><h3>Visit us</h3><a href="#contact">वाशिम, महाराष्ट्र</a><a id="footerPhone"></a></div></div><div class="copyright">© <span id="year"></span> Sohala Khadi Shop.</div></div></footer>
-
-<div class="overlay" id="cartOverlay"><aside class="drawer"><div style="display:flex;justify-content:space-between;align-items:center"><h2>आपली निवड</h2><button class="iconbtn" id="closeCart">×</button></div><div id="cartItems"></div><div id="cartTotal"></div><a class="checkout" id="checkout" target="_blank">WhatsApp वर ऑर्डर करा</a></aside></div>
-<div class="overlay" id="searchOverlay"><div class="searchpanel"><div style="display:flex;justify-content:space-between"><strong>कलेक्शनमध्ये शोधा</strong><button class="iconbtn" id="closeSearch">×</button></div><input id="globalSearch" placeholder="कुर्ता, जॅकेट, कापड..."><div id="searchResults"></div></div></div>
-<div class="toast" id="toast"></div>
+<!-- REVIEW MODAL -->
+<div id="modal" class="hidden fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
+  <div class="bg-[#FAF8F5] rounded p-6 w-full max-w-md space-y-3">
+    <h3 class="text-2xl text-[#6A1B1A]">तुमचा अभिप्राय</h3>
+    <input id="rName" class="w-full border p-2 rounded" placeholder="नाव | Name">
+    <select id="rStar" class="w-full border p-2 rounded"><option>5</option><option>4</option><option>3</option><option>2</option><option>1</option></select>
+    <textarea id="rText" rows="4" class="w-full border p-2 rounded" placeholder="तुमचा अनुभव | Your review"></textarea>
+    <div class="flex gap-3 justify-end"><button id="cancelRev" class="px-4">रद्द</button><button id="sendRev" class="btn">पाठवा | Submit</button></div>
+    <p id="revMsg" class="text-sm"></p>
+  </div>
+</div>
 
 <script>
-const $=s=>document.querySelector(s);
-let data,active="All",cart=JSON.parse(localStorage.getItem("sohala_cart")||"[]");
-const money=n=>"₹"+Number(n).toLocaleString("en-IN");
+/* ---------- CONFIG ---------- */
+// Create a free form at formspree.io and paste its URL here. Leave empty for demo mode (nothing is sent).
+const FORMSPREE_URL = "";
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let DATA = null, cat = "All";
 
 async function init(){
- try{
-  const local=localStorage.getItem("sohala_store_data");
-  data=local?JSON.parse(local):await(await fetch("data.json?v="+Date.now())).json();
- }catch(e){$("#grid").innerHTML="<p>Data load झाला नाही. data.json तपासा.</p>";return}
- renderStore();renderFilters();renderProducts();renderReviews();renderCart();
- $("#year").textContent=new Date().getFullYear();
+  try { DATA = await (await fetch("data.json?v=" + Date.now())).json(); }
+  catch(e){ document.body.insertAdjacentHTML("afterbegin","<p class='p-4 text-red-700'>data.json लोड झाले नाही. Please host on a server (GitHub Pages).</p>"); return; }
+  $("#ann").textContent = DATA.announcement;
+  $("#heroTitle").textContent = DATA.hero.title;
+  $("#heroSub").textContent = DATA.hero.subtitle;
+  const offers = DATA.offers.map(o => `<span>✦ ${esc(o)}</span>`).join("");
+  $("#marquee").innerHTML = offers + offers;  // doubled for seamless loop
+  const s = DATA.store;
+  $("#stName").textContent = s.name; $("#stAddr").textContent = "📍 " + s.address;
+  $("#stHours").textContent = "🕒 " + s.hours; $("#stPhone").innerHTML = `📞 <a href="tel:+${esc(s.phone)}">${esc(s.phoneDisplay)}</a>`;
+  renderFilters(); renderGrid(); renderReviews(); animate();
 }
-function renderStore(){
- const s=data.store;
- $("#announcement").textContent=data.announcement||"सोहळा खादी";
- $("#heroTitle").innerHTML=(data.hero?.title||"परंपरेचा नवा सोहळा").replace(" - ","<br>");
- $("#heroSubtitle").textContent=data.hero?.subtitle||"";
- $("#storeName").textContent=s.name;$("#storeAddress").textContent=s.address;
- $("#storeHours").textContent=s.hours;
- $("#storePhone").textContent=s.phoneDisplay;$("#storePhone").href="tel:+"+s.phone;
- $("#footerPhone").textContent=s.phoneDisplay;$("#footerPhone").href="tel:+"+s.phone;
- $("#mapLink").href="https://maps.google.com/?q="+encodeURIComponent(s.address);
- $("#mapEmbed").innerHTML='<iframe loading="lazy" src="https://www.google.com/maps?q='+encodeURIComponent(s.address)+'&output=embed" title="Google Maps"></iframe>';
-}
+
 function renderFilters(){
- const cats=["All",...new Set(data.products.map(p=>p.category))];
- $("#filters").innerHTML=cats.map(c=>`<button class="filter ${c===active?"active":""}" data-cat="${c}">${c==="All"?"सर्व":c}</button>`).join("");
- document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{active=b.dataset.cat;renderFilters();renderProducts()});
+  const cats = ["All", ...new Set(DATA.products.map(p => p.category))];
+  $("#filters").innerHTML = cats.map(c => `<button class="chip border border-[#6A1B1A] px-4 py-1 rounded-full text-sm ${c===cat?'active':''}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+  document.querySelectorAll(".chip").forEach(b => b.onclick = () => { cat = b.dataset.c; renderFilters(); renderGrid(); });
 }
-function renderProducts(query=""){
- $("#grid").innerHTML=data.products.filter(p=>(active==="All"||p.category===active)&&(`${p.name} ${p.description} ${p.category}`.toLowerCase().includes(query.toLowerCase()))).map(p=>`
- <article class="productcard"><div class="productmedia"><img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/600x800?text=Khadi'"></div>
- <div class="productinfo"><h3>${p.name}</h3><p>${p.description}</p><div class="productbottom"><span class="price">${money(p.price)}</span><button class="addbtn" onclick="addToCart('${p.id}')">कार्टमध्ये जोडा</button></div></div></article>`).join("")||"<p>उत्पादने सापडली नाहीत.</p>";
+
+function renderGrid(){
+  const list = DATA.products.filter(p => cat === "All" || p.category === cat);
+  $("#grid").innerHTML = list.map(p => {
+    const msg = encodeURIComponent(`नमस्कार, मला "${p.name}" (₹${p.price}) बद्दल माहिती हवी आहे.`);
+    return `<article class="card bg-white rounded overflow-hidden shadow">
+      <div class="overflow-hidden aspect-[4/5]"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" class="w-full h-full object-cover"></div>
+      <div class="p-4 space-y-1">
+        <h3 class="text-lg text-[#6A1B1A]">${esc(p.name)}</h3>
+        <p class="font-semibold">₹${esc(p.price)}</p>
+        <p class="text-xs">Sizes: ${esc(p.sizes)}</p>
+        <p class="text-xs opacity-80">${esc(p.description)}</p>
+        <a class="btn block text-center text-sm mt-3" target="_blank" rel="noopener" href="https://wa.me/${esc(DATA.store.phone)}?text=${msg}">WhatsApp वर विचारा | Inquire</a>
+      </div></article>`;
+  }).join("") || "<p>या विभागात सध्या वस्तू नाहीत.</p>";
+  // 3D tilt on pointer move
+  document.querySelectorAll(".card").forEach(c => {
+    c.onmousemove = e => { const r = c.getBoundingClientRect(), x = (e.clientX-r.left)/r.width-.5, y = (e.clientY-r.top)/r.height-.5;
+      c.style.transform = `perspective(700px) rotateY(${x*10}deg) rotateX(${-y*10}deg)`; };
+    c.onmouseleave = () => c.style.transform = "";
+  });
 }
+
 function renderReviews(){
- $("#reviewGrid").innerHTML=(data.reviews||[]).filter(r=>r.approved).map(r=>`<article class="review"><div class="stars">${"★".repeat(r.rating)}${"☆".repeat(5-r.rating)}</div><p>${r.text}</p><b>${r.name}</b></article>`).join("");
+  const r = DATA.reviews.filter(x => x.approved);
+  $("#revGrid").innerHTML = r.map(x => `<blockquote class="bg-white p-5 rounded shadow border-t-4 border-[#D4A017]">
+    <div class="text-[#D4A017]">${"★".repeat(x.rating)}${"☆".repeat(5-x.rating)}</div>
+    <p class="my-2 text-sm">${esc(x.text)}</p><footer class="font-medium text-[#6A1B1A]">${esc(x.name)}</footer></blockquote>`).join("") || "<p>पहिला अभिप्राय तुमचा असू द्या!</p>";
 }
-function addToCart(id){const p=data.products.find(x=>x.id===id),item=cart.find(x=>x.id===id);item?item.qty++:cart.push({id,qty:1});saveCart();toast("कार्टमध्ये जोडले")}
-function saveCart(){localStorage.setItem("sohala_cart",JSON.stringify(cart));renderCart()}
-function renderCart(){
- $("#cartCount").textContent=cart.reduce((n,x)=>n+x.qty,0);
- $("#cartItems").innerHTML=cart.map(x=>{const p=data.products.find(p=>p.id===x.id);return p?`<div class="cartitem"><img src="${p.image}" alt=""><div style="flex:1"><b>${p.name}</b><p>${money(p.price)} × ${x.qty}</p><button onclick="changeQty('${x.id}',-1)">−</button> ${x.qty} <button onclick="changeQty('${x.id}',1)">+</button></div></div>`:""}).join("")||"<p>तुमचा कार्ट रिकामा आहे.</p>";
- const total=cart.reduce((n,x)=>n+(data.products.find(p=>p.id===x.id)?.price||0)*x.qty,0);
- $("#cartTotal").innerHTML="<h3>एकूण: "+money(total)+"</h3>";
- const msg=["नमस्कार! मला खरेदी करायची आहे:",...cart.map(x=>{const p=data.products.find(p=>p.id===x.id);return p?`${p.name} × ${x.qty} — ${money(p.price*x.qty)}`:""}),`एकूण: ${money(total)}`].join("\n");
- $("#checkout").href="https://wa.me/"+data.store.phone+"?text="+encodeURIComponent(msg);
-}
-function changeQty(id,d){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=d;if(item.qty<1)cart=cart.filter(x=>x.id!==id);saveCart()}
-function toast(t){$("#toast").textContent=t;$("#toast").classList.add("show");setTimeout(()=>$("#toast").classList.remove("show"),2200)}
 
-$("#openCart").onclick=()=>$("#cartOverlay").classList.add("open");
-$("#closeCart").onclick=()=>$("#cartOverlay").classList.remove("open");
-$("#cartOverlay").onclick=e=>{if(e.target===$("#cartOverlay"))$("#cartOverlay").classList.remove("open")};
-$("#openSearch").onclick=()=>$("#searchOverlay").classList.add("open");
-$("#closeSearch").onclick=()=>$("#searchOverlay").classList.remove("open");
-$("#globalSearch").oninput=e=>{
- const q=e.target.value.toLowerCase();
- $("#searchResults").innerHTML=data.products.filter(p=>(p.name+" "+p.category+" "+p.description).toLowerCase().includes(q)).map(p=>`<p>${p.name} · ${money(p.price)}</p>`).join("")||"<p>काही सापडले नाही.</p>";
+function animate(){
+  gsap.registerPlugin(ScrollTrigger);
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { gsap.set(".curtain",{display:"none"}); return; }
+  // One orchestrated moment: curtain opens, then the headline rises
+  gsap.timeline()
+    .from("#heroTitle",{opacity:0,y:40,duration:1},0.2)
+    .to(".curtain:first-of-type",{xPercent:-100,duration:1.4,ease:"power3.inOut"},0.4)
+    .to(".curtain:last-of-type",{xPercent:100,duration:1.4,ease:"power3.inOut"},0.4)
+    .from("#heroSub, header a",{opacity:0,y:20,stagger:.2},1.2);
+  // Heritage timeline: lines reveal as the section scrolls
+  gsap.from(".story",{opacity:0,x:-40,stagger:.4,scrollTrigger:{trigger:"#heritage",start:"top 65%",end:"bottom 80%",scrub:1}});
+}
+
+/* ---------- Review modal ---------- */
+$("#openRev").onclick = () => $("#modal").classList.remove("hidden");
+$("#cancelRev").onclick = () => $("#modal").classList.add("hidden");
+$("#sendRev").onclick = async () => {
+  const body = {name: $("#rName").value.trim(), rating: $("#rStar").value, review: $("#rText").value.trim()};
+  if (!body.name || !body.review) { $("#revMsg").textContent = "कृपया नाव आणि अभिप्राय भरा."; return; }
+  try {
+    if (FORMSPREE_URL) await fetch(FORMSPREE_URL,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(body)});
+    $("#revMsg").textContent = "धन्यवाद! मालकाच्या मंजुरीनंतर अभिप्राय दिसेल.";
+    setTimeout(() => $("#modal").classList.add("hidden"), 1800);
+  } catch(e){ $("#revMsg").textContent = "पाठवता आले नाही, पुन्हा प्रयत्न करा."; }
 };
-$("#searchOverlay").onclick=e=>{if(e.target===$("#searchOverlay"))$("#searchOverlay").classList.remove("open")};
-window.addToCart=addToCart;window.changeQty=changeQty;
-
-const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll("section,.promiseitem").forEach(el=>{el.classList.add("reveal");observer.observe(el)});
 init();
 </script>
 </body>
